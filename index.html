@@ -15,6 +15,8 @@
       <h1>Mass Martial Arts</h1>
       <h2>Search martial arts gyms in the Greater Boston Area</h2>
       <p class="message"></p>
+
+      <!-- Sign up form -->
       <form id="sign-up">
         <h2>Sign Up</h2>
         <input name="credentials[email]" type="email" placeholder="Email"/> <br>
@@ -22,12 +24,57 @@
         <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"/> <br>
         <button type="submit" class="btn btn-primary">Sign Up</button>
       </form>
+      <!-- End sign up Form -->
 
+      <!-- Log in form -->
       <form id="login">
         <h2>Login</h2>
-        <input name="credentials[email]" type="email" placeholder="Email"><br>
-        <input name="credentials[password]" type="password" placeholder="Password"><br>
+        <input name="credentials[email]" type="email" placeholder="Email" value="p@h.com"><br>
+        <input name="credentials[password]" type="password" placeholder="Password" value="p"><br>
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
+      <!-- End log in form -->
+
+      <!-- Change PW form -->
+      <form id="changepw">
+        <h2>Change Password</h2>
+        <input name="passwords[old]" type="password" placeholder="Current Password"> <br>
+        <input name="passwords[new]" type="password" placeholder="New Password"> <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <!-- End PW form -->
+
+      <button id="logout" class="btn btn-primary">Logout</button>
+
+      <!-- Create gym form -->
+      <form id="create-gym">
+        <h2>Create Gym Profile</h2>
+        <label for="gym[name]">Gym Name</label>
+        <input name="gym[name]" type="text"> <br>
+        <label for="gym[concentration]">Training Type</label>
+        <select name=gym[concentration]>
+          <option value=""></option>
+          <option value="boxing">Boxing</option>
+          <option value="bjj">Brazilian Jiu Jitsu</option>
+          <option value="judo">Judo</option>
+          <option value="karate">Karate</option>
+          <option value="kickboxing">Kickboxing</option>
+          <option value="mma">MMA</option>
+          <option value="tkd">Tae Kwon Do</option>
+          <option value="wrestling">Wrestling</option>
+        </select> <br>
+        <label for="gym[address][street]">Address</label>
+        <input name="gym[address][street]" type="text"> <br>
+        <label for="gym[address][city]">City</label>
+        <input name="gym[address][city]" type="text"> <br>
+        <label for="gym[address][state]">State</label>
+        <input name="gym[address][state]" type="text"> <br>
+        <label for="gym[address][zip]">ZIP</label>
+        <input name="gym[address][zip]" type="text"> <br>
+        <label for="gym[hours]">Hours</label>
+        <input name="gym[hours]" type="text">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
     </body>
 </html>
