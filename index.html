@@ -44,6 +44,7 @@
       </form>
       <!-- End PW form -->
 
+      <!-- Logout Button -->
       <button id="logout" class="btn btn-primary">Logout</button>
 
       <!-- Create gym form -->
@@ -54,27 +55,32 @@
         <label for="gym[concentration]">Training Type</label>
         <select name=gym[concentration]>
           <option value=""></option>
-          <option value="boxing">Boxing</option>
-          <option value="bjj">Brazilian Jiu Jitsu</option>
-          <option value="judo">Judo</option>
-          <option value="karate">Karate</option>
-          <option value="kickboxing">Kickboxing</option>
-          <option value="mma">MMA</option>
-          <option value="tkd">Tae Kwon Do</option>
-          <option value="wrestling">Wrestling</option>
+          <option value="Boxing">Boxing</option>
+          <option value="Brazilian Jiu Jitsu">Brazilian Jiu Jitsu</option>
+          <option value="Judo">Judo</option>
+          <option value="Karate">Karate</option>
+          <option value="Kickboxing">Kickboxing</option>
+          <option value="MMA">MMA</option>
+          <option value="Tae Kwon Do">Tae Kwon Do</option>
+          <option value="Wrestling">Wrestling</option>
         </select> <br>
         <label for="gym[address][street]">Address</label>
         <input name="gym[address][street]" type="text"> <br>
         <label for="gym[address][city]">City</label>
         <input name="gym[address][city]" type="text"> <br>
         <label for="gym[address][state]">State</label>
-        <input name="gym[address][state]" type="text"> <br>
+        <select name=gym[address][state]>
+          <option value="MA">MA</option>
+        </select> <br>
         <label for="gym[address][zip]">ZIP</label>
         <input name="gym[address][zip]" type="text"> <br>
         <label for="gym[hours]">Hours</label>
-        <input name="gym[hours]" type="text">
+        <input name="gym[hours]" type="text"> <br>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
+      <!-- SHOW ALL GYMS BUTTON -->
+      <button id="show-all" class="btn btn-primary">Show All Gyms</button>
+      <div class="gyms-list"></div>
     </body>
 </html>

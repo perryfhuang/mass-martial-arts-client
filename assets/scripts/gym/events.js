@@ -14,6 +14,13 @@ const onCreateGym = function (event) {
     .catch(ui.createGymFail)
 }
 
+const onShowAll = function (event) {
+  api.showGyms()
+    .then(ui.showGymsSuccess)
+    .catch(ui.showGymsFail)
+}
+
 module.exports = {
-  onCreateGym
+  onCreateGym,
+  onShowAll
 }

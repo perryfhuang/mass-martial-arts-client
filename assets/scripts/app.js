@@ -16,4 +16,5 @@ $(() => {
 
   // Gym resource event listeners
   $('#create-gym').on('submit', gymEvents.onCreateGym)
+  $('#show-all').on('click', gymEvents.onShowAll)
 })
