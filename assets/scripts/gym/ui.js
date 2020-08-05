@@ -1,7 +1,6 @@
 'use strict'
 const gymsHandlebarsTemplate = require('../gyms.handlebars')
 
-
 const createGymSuccess = function () {
   $('.message').text('Your gym was added to the database!')
   $('form').trigger('reset')
@@ -45,6 +44,7 @@ const updateGymSuccess = function () {
 const updateGymFail = function () {
   $('.message').text('Failed to update gym!')
 }
+
 module.exports = {
   createGymSuccess,
   createGymFail,

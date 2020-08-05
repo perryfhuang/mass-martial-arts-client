@@ -16,15 +16,41 @@
       <h2>Search martial arts gyms in the Greater Boston Area</h2>
       <p class="message"></p>
 
-      <!-- Sign up form -->
-      <form id="sign-up">
-        <h2>Sign Up</h2>
-        <input name="credentials[email]" type="email" placeholder="Email"/> <br>
-        <input name="credentials[password]" type="password" placeholder="Password"/> <br>
-        <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"/> <br>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-      </form>
-      <!-- End sign up Form -->
+      <!-- Button to trigger sign up modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+        Sign Up
+      </button>
+
+      <!--  Sign up Modal -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Sign Up</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Sign up form -->
+              <form id="sign-up">
+                <input name="credentials[email]" type="email" placeholder="Email"/> <br>
+                <input name="credentials[password]" type="password" placeholder="Password"/> <br>
+                <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"/> <br>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+              <!-- End sign up Form -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End sign up modal -->
+
+
 
       <!-- Log in form -->
       <form id="login">
