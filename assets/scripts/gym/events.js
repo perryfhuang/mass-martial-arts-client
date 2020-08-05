@@ -20,7 +20,29 @@ const onShowAll = function (event) {
     .catch(ui.showGymsFail)
 }
 
+const onDeleteGym = function (event) {
+  const gymId = $(event.target).data('id')
+  api.deleteGym(gymId)
+    .then(ui.deleteGymSuccess)
+    .catch(ui.deleteGymFail)
+}
+
+const onUpdateGym = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  const gymId = $('.update-gym-submit').data('id')
+  formData._id = gymId
+  console.log(formData)
+  console.log(gymId)
+  api.updateGym(formData, gymId)
+    .then(ui.updateGymSuccess)
+    .catch(ui.updateGymFail)
+}
+
 module.exports = {
   onCreateGym,
-  onShowAll
+  onShowAll,
+  onDeleteGym,
+  onUpdateGym
 }

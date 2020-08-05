@@ -4,5 +4,7 @@
      <h4 class="training">{{gym.concentration}}</h4>
      <h5>{{gym.address.street}} {{gym.address.city}} {{gym.address.state}}</h5>
      <h6>{{gym.hours}}</h6>
+     <button data-id="{{gym._id}}" class="btn btn-primary delete-gym">Delete</button>
+     <button data-id="{{gym._id}}" class="btn btn-primary update-gym">Update</button>
   </div>
 {{/each}}

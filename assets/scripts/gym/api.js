@@ -22,7 +22,31 @@ const showGyms = function () {
     }
   })
 }
+
+const deleteGym = function (gymId) {
+  return $.ajax({
+    url: config.apiUrl + '/gyms/' + gymId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateGym = function (formData, gymId) {
+  return $.ajax({
+    url: config.apiUrl + '/gyms/' + gymId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   createGym,
-  showGyms
+  showGyms,
+  deleteGym,
+  updateGym
 }

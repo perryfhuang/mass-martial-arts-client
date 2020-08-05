@@ -14,7 +14,7 @@ const createGymFail = function (error) {
 const showGymsSuccess = function (response) {
   console.log(response)
   const gymsHtml = gymsHandlebarsTemplate({ gyms: response.gyms })
-  $('.gyms-list').append(gymsHtml)
+  $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all gyms from database')
   $('form').trigger('reset')
 }
@@ -23,9 +23,36 @@ const showGymsFail = function (error) {
   $('form').trigger('reset')
 }
 
+const deleteGymSuccess = function () {
+  $('.message').text('Deleted gym from database!')
+}
+const deleteGymFail = function () {
+  $('.message').text('Failed to delete gym from database!')
+}
+
+const showUpdateForm = function () {
+  // Attach GYM data-id somehow to this form - use .data jquery method
+  // Set update-gym-submit button's data-id attribute to the data-id attribute of the specific gym
+  $('.update-gym-submit').data('id', $(this).data('id'))
+  console.log($('.update-gym-submit').data('id'))
+  $('#update-gym').fadeIn(500)
+}
+
+const updateGymSuccess = function () {
+  $('.message').text('Updated gym info!')
+  $('#update-gym').hide()
+}
+const updateGymFail = function () {
+  $('.message').text('Failed to update gym!')
+}
 module.exports = {
   createGymSuccess,
   createGymFail,
   showGymsSuccess,
-  showGymsFail
+  showGymsFail,
+  deleteGymSuccess,
+  deleteGymFail,
+  showUpdateForm,
+  updateGymSuccess,
+  updateGymFail
 }

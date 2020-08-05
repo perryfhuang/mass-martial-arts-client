@@ -6,6 +6,7 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const gymEvents = require('./gym/events')
+const uiEvents = require('./gym/ui')
 
 $(() => {
   // Auth event listeners
@@ -17,4 +18,8 @@ $(() => {
   // Gym resource event listeners
   $('#create-gym').on('submit', gymEvents.onCreateGym)
   $('#show-all').on('click', gymEvents.onShowAll)
+  $('#update-gym').on('submit', gymEvents.onUpdateGym)
+  // Delete gym with event delegation (able to delete AFTER gyms list is added to HTML aka AFTER page load)
+  $('.gyms-list').on('click', '.delete-gym', gymEvents.onDeleteGym)
+  $('.gyms-list').on('click', '.update-gym', uiEvents.showUpdateForm)
 })

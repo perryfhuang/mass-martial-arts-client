@@ -79,6 +79,38 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
+      <!-- Update gym form -->
+      <form id="update-gym">
+        <h2>Update Gym Profile</h2>
+        <label for="gym[name]">Gym Name</label>
+        <input name="gym[name]" type="text"> <br>
+        <label for="gym[concentration]">Training Type</label>
+        <select name=gym[concentration]>
+          <option value=""></option>
+          <option value="Boxing">Boxing</option>
+          <option value="Brazilian Jiu Jitsu">Brazilian Jiu Jitsu</option>
+          <option value="Judo">Judo</option>
+          <option value="Karate">Karate</option>
+          <option value="Kickboxing">Kickboxing</option>
+          <option value="MMA">MMA</option>
+          <option value="Tae Kwon Do">Tae Kwon Do</option>
+          <option value="Wrestling">Wrestling</option>
+        </select> <br>
+        <label for="gym[address][street]">Address</label>
+        <input name="gym[address][street]" type="text"> <br>
+        <label for="gym[address][city]">City</label>
+        <input name="gym[address][city]" type="text"> <br>
+        <label for="gym[address][state]">State</label>
+        <select name=gym[address][state]>
+          <option value="MA">MA</option>
+        </select> <br>
+        <label for="gym[address][zip]">ZIP</label>
+        <input name="gym[address][zip]" type="text"> <br>
+        <label for="gym[hours]">Hours</label>
+        <input name="gym[hours]" type="text"> <br>
+        <button type="submit" class="btn btn-primary update-gym-submit">Submit</button>
+      </form>
+
       <!-- SHOW ALL GYMS BUTTON -->
       <button id="show-all" class="btn btn-primary">Show All Gyms</button>
       <div class="gyms-list"></div>
