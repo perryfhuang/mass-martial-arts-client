@@ -35,6 +35,14 @@ $(() => {
 
   // Get Gym listners, by concentration
   $('#show-mma').on('click', gymEvents.onShowMMA)
+  $('#show-boxing').on('click', gymEvents.onShowBoxing)
+  $('#show-bjj').on('click', gymEvents.onShowBJJ)
+  $('#show-judo').on('click', gymEvents.onShowJudo)
+  $('#show-karate').on('click', gymEvents.onShowKarate)
+  $('#show-kickboxing').on('click', gymEvents.onShowKickboxing)
+  $('#show-muay-thai').on('click', gymEvents.onShowMuayThai)
+  $('#show-tkd').on('click', gymEvents.onShowTKD)
+  $('#show-wrestling').on('click', gymEvents.onShowWrestling)
 
   // Button listener for after after failed gym events
   $('.create-gym-after-fail').on('click', uiEvents.showCreateGymForm)

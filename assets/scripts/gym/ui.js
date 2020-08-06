@@ -1,7 +1,7 @@
 'use strict'
-const gymsHandlebarsTemplate = require('../gyms.handlebars')
-const gymHandlebarsTemplate = require('../gym.handlebars')
-const gymsMMAHandlebarsTemplate = require('../gyms-mma.handlebars')
+const gymsHandlebarsTemplate = require('../handlebars/gyms.handlebars')
+const gymHandlebarsTemplate = require('../handlebars/gym.handlebars')
+const gymsMMAHandlebarsTemplate = require('../handlebars/gyms-mma.handlebars')
 const api = require('./api')
 
 const createGymSuccess = function (response) {
