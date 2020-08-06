@@ -15,6 +15,7 @@ $(() => {
   $('#changepw').on('submit', authEvents.onChangepw)
   $('#logout').on('click', authEvents.onLogout)
 
+  // Login button listener for immediately AFTER user has signed up
   $('.login-after-signup').on('click', uiEvents.loginAfterSignUp)
 
   // Gym resource event listeners
@@ -23,5 +24,6 @@ $(() => {
   $('#update-gym').on('submit', gymEvents.onUpdateGym)
   // Delete gym with event delegation (able to delete AFTER gyms list is added to HTML aka AFTER page load)
   $('.gyms-list').on('click', '.delete-gym', gymEvents.onDeleteGym)
+  // Show update gym form with same event delegation concept
   $('.gyms-list').on('click', '.update-gym', uiEvents.showUpdateForm)
 })

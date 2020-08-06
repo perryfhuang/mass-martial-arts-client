@@ -221,9 +221,9 @@
       <form id="update-gym">
         <h2>Update Gym Profile</h2>
         <label for="gym[name]">Gym Name</label>
-        <input name="gym[name]" type="text"> <br>
+        <input class="gym-name" name="gym[name]" type="text"> <br>
         <label for="gym[concentration]">Training Type</label>
-        <select name=gym[concentration]>
+        <select class="gym-concentration" name=gym[concentration]>
           <option value=""></option>
           <option value="Boxing">Boxing</option>
           <option value="Brazilian Jiu Jitsu">Brazilian Jiu Jitsu</option>
@@ -235,17 +235,17 @@
           <option value="Wrestling">Wrestling</option>
         </select> <br>
         <label for="gym[address][street]">Address</label>
-        <input name="gym[address][street]" type="text"> <br>
+        <input class="gym-street" name="gym[address][street]" type="text"> <br>
         <label for="gym[address][city]">City</label>
-        <input name="gym[address][city]" type="text"> <br>
+        <input class="gym-city" name="gym[address][city]" type="text"> <br>
         <label for="gym[address][state]">State</label>
-        <select name=gym[address][state]>
+        <select class="gym-state" name=gym[address][state]>
           <option value="MA">MA</option>
         </select> <br>
         <label for="gym[address][zip]">ZIP</label>
-        <input name="gym[address][zip]" type="text"> <br>
+        <input class="gym-zip" name="gym[address][zip]" type="text"> <br>
         <label for="gym[hours]">Hours</label>
-        <input name="gym[hours]" type="text"> <br>
+        <input class="gym-hours" name="gym[hours]" type="text"> <br>
         <button type="submit" class="btn btn-primary update-gym-submit">Submit</button>
       </form>
 

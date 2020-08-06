@@ -1,6 +1,7 @@
 'use strict'
 const gymsHandlebarsTemplate = require('../gyms.handlebars')
 const gymHandlebarsTemplate = require('../gym.handlebars')
+const api = require('./api')
 
 const createGymSuccess = function (response) {
   console.log(response)
@@ -28,7 +29,11 @@ const showGymsFail = function (error) {
 }
 
 const deleteGymSuccess = function () {
-  $('.message').text('Deleted gym from database!')
+  // After successful delete, trigger a get-all-gyms event to refresh list
+  api.showGyms()
+    .then(showGymsSuccess)
+    .then(() => $('.message').text('Deleted gym from database and refreshed list!'))
+    .catch(showGymsFail)
 }
 const deleteGymFail = function () {
   $('.message').text('Failed to delete gym from database!')
@@ -39,6 +44,17 @@ const showUpdateForm = function () {
   // Set update-gym-submit button's data-id attribute to the data-id attribute of the specific gym
   $('.update-gym-submit').data('id', $(this).data('id'))
   console.log($('.update-gym-submit').data('id'))
+
+  // Auto populate current gym info into the form
+  // This was done by setting data attributes for all gym info on the update button for each gym using handlebars template (data-name, data-street, data-hours, etc.), and then setting the form field using jquery (by getting the data-value from the button)
+  $('.gym-name').val($(this).data('name'))
+  $('.gym-concentration').val($(this).data('concentration'))
+  $('.gym-street').val($(this).data('street'))
+  $('.gym-city').val($(this).data('city'))
+  $('.gym-state').val($(this).data('state'))
+  $('.gym-zip').val($(this).data('zip'))
+  $('.gym-hours').val($(this).data('hours'))
+
   $('#update-gym').fadeIn(500)
 }
 
