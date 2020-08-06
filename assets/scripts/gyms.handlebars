@@ -1,4 +1,20 @@
 {{#each gyms as |gym|}}
+<div class="col mb-4">
+  <div class="card text-white bg-dark">
+    <div class="card-body">
+      <h3 class="card-title">{{gym.name}}</h3>
+      <h4 class="card-subtitle mb-2 text-muted">{{gym.concentration}}</h4>
+      <h5 class="card-text">{{gym.address.street}} {{gym.address.city}} {{gym.address.state}} {{gym.address.zip}} <br>
+      Hours: {{gym.hours}}
+      </h5>
+      <button data-id="{{gym._id}}" class="btn btn-primary delete-gym">Delete</button>
+      <button data-id="{{gym._id}}" data-name="{{gym.name}}" data-concentration="{{gym.concentration}}" data-street="{{gym.address.street}}" data-city="{{gym.address.city}}" data-state="{{gym.address.state}}" data-zip="{{gym.address.zip}}" data-hours="{{gym.hours}}" class="btn btn-primary update-gym">Update</button>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+<!-- {{#each gyms as |gym|}}
   <div class="gym-card">
      <h3>{{gym.name}}</h3>
      <h4 class="training">{{gym.concentration}}</h4>
@@ -7,4 +23,4 @@
      <button data-id="{{gym._id}}" class="btn btn-primary delete-gym">Delete</button>
      <button data-id="{{gym._id}}" data-name="{{gym.name}}" data-concentration="{{gym.concentration}}" data-street="{{gym.address.street}}" data-city="{{gym.address.city}}" data-state="{{gym.address.state}}" data-zip="{{gym.address.zip}}" data-hours="{{gym.hours}}" class="btn btn-primary update-gym">Update</button>
   </div>
-{{/each}}
+{{/each}} -->
