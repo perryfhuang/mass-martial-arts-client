@@ -3,6 +3,9 @@ const store = require('../store')
 
 const signUpSuccess = function () {
   $('.message').text('Account created!')
+  $('#signUpSuccess').modal('show')
+  $('#signUpModal').modal('hide')
+
   $('form').trigger('reset')
 }
 const signUpFail = function (error) {
@@ -13,6 +16,8 @@ const signUpFail = function (error) {
 const loginSuccess = function (response) {
   $('.message').text('Succesfully logged in.')
   $('form').trigger('reset')
+  $('#loginSuccess').modal('show')
+  $('#loginModal').modal('hide')
   store.user = response.user
   console.log(store)
 }

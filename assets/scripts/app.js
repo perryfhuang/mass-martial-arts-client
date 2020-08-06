@@ -15,6 +15,8 @@ $(() => {
   $('#changepw').on('submit', authEvents.onChangepw)
   $('#logout').on('click', authEvents.onLogout)
 
+  $('.login-after-signup').on('click', uiEvents.loginAfterSignUp)
+
   // Gym resource event listeners
   $('#create-gym').on('submit', gymEvents.onCreateGym)
   $('#show-all').on('click', gymEvents.onShowAll)
