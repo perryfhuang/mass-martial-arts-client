@@ -1,4 +1,5 @@
 {{#each gyms as |gym|}}
+{{#if (ifboxing gym.concentration)}}
 <div class="col mb-4">
   <div class="card text-white bg-dark">
     <div class="card-body">
@@ -12,4 +13,5 @@
     </div>
   </div>
 </div>
+{{/if}}
 {{/each}}

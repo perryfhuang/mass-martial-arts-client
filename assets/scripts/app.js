@@ -34,12 +34,12 @@ $(() => {
   $('.gyms-list').on('click', '.update-gym', uiEvents.showUpdateForm)
 
   // Get Gym listners, by concentration
-  $('#show-mma').on('click', gymEvents.onShowMMA)
   $('#show-boxing').on('click', gymEvents.onShowBoxing)
   $('#show-bjj').on('click', gymEvents.onShowBJJ)
   $('#show-judo').on('click', gymEvents.onShowJudo)
   $('#show-karate').on('click', gymEvents.onShowKarate)
   $('#show-kickboxing').on('click', gymEvents.onShowKickboxing)
+  $('#show-mma').on('click', gymEvents.onShowMMA)
   $('#show-muay-thai').on('click', gymEvents.onShowMuayThai)
   $('#show-tkd').on('click', gymEvents.onShowTKD)
   $('#show-wrestling').on('click', gymEvents.onShowWrestling)

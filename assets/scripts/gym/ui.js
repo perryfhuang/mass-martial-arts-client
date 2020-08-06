@@ -2,6 +2,7 @@
 const gymsHandlebarsTemplate = require('../handlebars/gyms.handlebars')
 const gymHandlebarsTemplate = require('../handlebars/gym.handlebars')
 const gymsMMAHandlebarsTemplate = require('../handlebars/gyms-mma.handlebars')
+const gymsBoxingHandlebarsTemplate = require('../handlebars/gyms-boxing.handlebars')
 const api = require('./api')
 
 const createGymSuccess = function (response) {
@@ -41,6 +42,18 @@ const showMMAGymsSuccess = function (response) {
   $('form').trigger('reset')
 }
 const showMMAGymsFail = function (error) {
+  $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
+  $('form').trigger('reset')
+}
+
+const showBoxingGymsSuccess = function (response) {
+  // $('#showGymsSuccess').modal('show')
+  const gymsHtml = gymsBoxingHandlebarsTemplate({ gyms: response.gyms })
+  $('.gyms-list').html(gymsHtml)
+  $('.message').text('Retrieved all boxing gyms from database')
+  $('form').trigger('reset')
+}
+const showBoxingGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
   $('form').trigger('reset')
 }
@@ -113,5 +126,7 @@ module.exports = {
   showCreateGymForm,
   showUpdateGymForm,
   showMMAGymsSuccess,
-  showMMAGymsFail
+  showMMAGymsFail,
+  showBoxingGymsSuccess,
+  showBoxingGymsFail
 }
