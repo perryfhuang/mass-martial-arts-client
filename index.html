@@ -171,10 +171,9 @@
                 <div class="modal-body">
                   <!-- Change PW form -->
                   <form id="changepw">
-                    <h2>Change Password</h2>
                     <input name="passwords[old]" type="password" placeholder="Current Password"> <br>
                     <input name="passwords[new]" type="password" placeholder="New Password"> <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary changepw">Submit</button>
                   </form>
                   <!-- End PW form -->
                 </div>
@@ -207,6 +206,25 @@
         </div>
       </div>
 
+      <!-- Failed Sign Up Modal -->
+      <div class="modal fade" id="signUpFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Account is taken, please try again.</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary sign-up-after-fail" data-toggle="modal" data-target="#signUpFail">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Successful Login Modal -->
       <div class="modal fade" id="loginSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
@@ -220,6 +238,63 @@
             <div class="modal-body">
               <button type="button" class="btn btn-primary login" data-toggle="modal" data-dismiss="modal">
                 Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Failed Login Modal -->
+      <div class="modal fade" id="loginFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Login failed.<br> Please check credentials.</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary login-after-fail" data-toggle="modal" data-dismiss="modal">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Successful Change PW Modal -->
+      <div class="modal fade" id="changepwSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Password changed!</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Failed Change PWModal -->
+      <div class="modal fade" id="changepwFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Failed to change password, please try again.</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary changepw-after-fail">
+                Change Password
               </button>
             </div>
           </div>

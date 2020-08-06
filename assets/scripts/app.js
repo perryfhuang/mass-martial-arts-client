@@ -7,6 +7,7 @@
 const authEvents = require('./auth/events')
 const gymEvents = require('./gym/events')
 const uiEvents = require('./gym/ui')
+const uiAuthEvents = require('./auth/ui')
 
 $(() => {
   // Auth event listeners
@@ -16,7 +17,12 @@ $(() => {
   $('#logout').on('click', authEvents.onLogout)
 
   // Login button listener for immediately AFTER user has signed up
-  $('.login-after-signup').on('click', uiEvents.loginAfterSignUp)
+  $('.login-after-signup').on('click', uiAuthEvents.loginAfterSignUp)
+
+  // Button listeners for after failed auth events
+  $('.login-after-fail').on('click', uiAuthEvents.loginAfterFail)
+  $('.sign-up-after-fail').on('click', uiAuthEvents.signUpAfterFail)
+  $('.changepw-after-fail').on('click', uiAuthEvents.changepwAfterFail)
 
   // Gym resource event listeners
   $('#create-gym').on('submit', gymEvents.onCreateGym)

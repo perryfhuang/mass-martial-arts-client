@@ -70,10 +70,6 @@ const updateGymFail = function () {
   $('.message').text('Failed to update gym!')
 }
 
-const loginAfterSignUp = function () {
-  $('#signUpSuccess').modal('hide')
-}
-
 module.exports = {
   createGymSuccess,
   createGymFail,
@@ -83,6 +79,5 @@ module.exports = {
   deleteGymFail,
   showUpdateForm,
   updateGymSuccess,
-  updateGymFail,
-  loginAfterSignUp
+  updateGymFail
 }

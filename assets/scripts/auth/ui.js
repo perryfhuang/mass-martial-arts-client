@@ -8,9 +8,10 @@ const signUpSuccess = function () {
 
   $('form').trigger('reset')
 }
-const signUpFail = function (error) {
-  $('.message').text('Failed to create account.\nSee error message: ' + error.message)
-  $('form').trigger('reset')
+const signUpFail = function () {
+  $('.message').text('Account is taken, please try again.')
+  $('#signUpFail').modal('show')
+  $('#signUpModal').modal('hide')
 }
 
 const loginSuccess = function (response) {
@@ -23,14 +24,22 @@ const loginSuccess = function (response) {
 }
 const loginFail = function () {
   $('.message').text('Login failed. =(\nPlease check credentials.')
+  $('form').trigger('reset')
+  $('#loginModal').modal('hide')
+  $('#loginFail').modal('show')
 }
 
 const changepwSuccess = function () {
   $('.message').text('Password changed!')
+  $('#changepwModal').modal('hide')
+  $('#changepwSuccess').modal('show')
   $('form').trigger('reset')
 }
 const changepwFail = function () {
   $('.message').text('Failed to change password.')
+  $('#changepwModal').modal('hide')
+  $('#changepwFail').modal('show')
+  $('form').trigger('reset')
 }
 
 const logoutSuccess = function () {
@@ -42,6 +51,27 @@ const logoutSuccess = function () {
 }
 const logoutFail = function () {
   $('.message').text('Failed to logout. =(')
+  $('form').trigger('reset')
+}
+
+const loginAfterSignUp = function () {
+  $('#signUpSuccess').modal('hide')
+  $('form').trigger('reset')
+}
+
+const loginAfterFail = function () {
+  $('#loginModal').modal('show')
+  $('form').trigger('reset')
+}
+
+const signUpAfterFail = function () {
+  $('#signUpModal').modal('show')
+  $('form').trigger('reset')
+}
+
+const changepwAfterFail = function () {
+  $('#changepwFail').modal('hide')
+  $('#changepwModal').modal('show')
 }
 
 module.exports = {
@@ -52,5 +82,9 @@ module.exports = {
   changepwSuccess,
   changepwFail,
   logoutSuccess,
-  logoutFail
+  logoutFail,
+  loginAfterSignUp,
+  loginAfterFail,
+  signUpAfterFail,
+  changepwAfterFail
 }
