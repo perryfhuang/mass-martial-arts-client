@@ -59,8 +59,12 @@ const showUpdateForm = function () {
 }
 
 const updateGymSuccess = function () {
-  $('.message').text('Updated gym info!')
-  $('#update-gym').hide()
+  // After successful update, trigger get all gyms api call to refresh list
+  api.showGyms()
+    .then(showGymsSuccess)
+    .then(() => $('#update-gym').hide())
+    .then(() => $('.message').text('Updated gym info and refreshed list!'))
+    .catch(showGymsFail)
 }
 const updateGymFail = function () {
   $('.message').text('Failed to update gym!')
