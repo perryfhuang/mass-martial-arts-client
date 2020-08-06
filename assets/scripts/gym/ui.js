@@ -1,6 +1,7 @@
 'use strict'
 const gymsHandlebarsTemplate = require('../gyms.handlebars')
 const gymHandlebarsTemplate = require('../gym.handlebars')
+// const gymsMMAHandlebarsTemplate = require('../gyms-mma.handlebars')
 const api = require('./api')
 
 const createGymSuccess = function (response) {
@@ -10,14 +11,18 @@ const createGymSuccess = function (response) {
   const gymHtml = gymHandlebarsTemplate({ gym: response.gym })
   // APPEND NEW GYM TO CURRENT LIST
   $('.gyms-list').append(gymHtml)
+  $('#createGymModal').modal('hide')
 }
 const createGymFail = function () {
   $('.message').text('Failed to create gym.')
+  $('#createGymModal').modal('hide')
+  $('#createGymFail').modal('show')
   $('form').trigger('reset')
 }
 
 const showGymsSuccess = function (response) {
   console.log(response)
+  $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all gyms from database')
@@ -27,6 +32,18 @@ const showGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
   $('form').trigger('reset')
 }
+
+// const showMMAGymsSuccess = function (response) {
+//   $('#showGymsSuccess').modal('show')
+//   const gymsHtml = gymsMMAHandlebarsTemplate({ gyms: response.gyms })
+//   $('.gyms-list').html(gymsHtml)
+//   $('.message').text('Retrieved all MMA gyms from database')
+//   $('form').trigger('reset')
+// }
+// const showMMAGymsFail = function (error) {
+//   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
+//   $('form').trigger('reset')
+// }
 
 const deleteGymSuccess = function () {
   // After successful delete, trigger a get-all-gyms event to refresh list
@@ -55,21 +72,34 @@ const showUpdateForm = function () {
   $('.gym-zip').val($(this).data('zip'))
   $('.gym-hours').val($(this).data('hours'))
 
-  $('#update-gym').fadeIn(500)
+  $('#updateGymModal').modal('show')
+  $('#update-gym').show()
 }
 
 const updateGymSuccess = function () {
   // After successful update, trigger get all gyms api call to refresh list
   api.showGyms()
     .then(showGymsSuccess)
+    .then(() => $('#updateGymModal').modal('hide'))
     .then(() => $('#update-gym').hide())
     .then(() => $('.message').text('Updated gym info and refreshed list!'))
+    .then(() => $('#updateGymSuccess').modal('show'))
     .catch(showGymsFail)
 }
 const updateGymFail = function () {
   $('.message').text('Failed to update gym!')
+  $('#updateGymFail').modal('show')
 }
 
+const showCreateGymForm = function () {
+  $('#createGymFail').modal('hide')
+  $('#createGymModal').modal('show')
+}
+
+const showUpdateGymForm = function () {
+  $('#updateGymFail').modal('hide')
+  $('#updateGymModal').modal('show')
+}
 module.exports = {
   createGymSuccess,
   createGymFail,
@@ -79,5 +109,9 @@ module.exports = {
   deleteGymFail,
   showUpdateForm,
   updateGymSuccess,
-  updateGymFail
+  updateGymFail,
+  showCreateGymForm,
+  showUpdateGymForm
+  // showMMAGymsSuccess,
+  // showMMAGymsFail
 }

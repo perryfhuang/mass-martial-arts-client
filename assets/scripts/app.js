@@ -32,4 +32,11 @@ $(() => {
   $('.gyms-list').on('click', '.delete-gym', gymEvents.onDeleteGym)
   // Show update gym form with same event delegation concept
   $('.gyms-list').on('click', '.update-gym', uiEvents.showUpdateForm)
+
+  // Get Gym listners, by concentration
+  // $('#show-mma').on('click', gymEvents.onShowMMA)
+
+  // Button listener for after after failed gym events
+  $('.create-gym-after-fail').on('click', uiEvents.showCreateGymForm)
+  $('.update-gym-after-fail').on('click', uiEvents.showUpdateGymForm)
 })

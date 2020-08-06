@@ -59,8 +59,8 @@
                 <div class="modal-body">
                   <!-- Log in form -->
                   <form id="login">
-                    <input name="credentials[email]" type="email" placeholder="Email" value="p@h.com"><br>
-                    <input name="credentials[password]" type="password" placeholder="Password" value="p"><br>
+                    <input name="credentials[email]" type="email" placeholder="Email" value="p@h.com" required><br>
+                    <input name="credentials[password]" type="password" placeholder="Password" value="p" required><br>
                     <button type="submit" class="btn btn-primary">Login</button>
                   </form>
                   <!-- End log in form -->
@@ -88,9 +88,9 @@
                 <div class="modal-body">
                   <!-- Sign up form -->
                   <form id="sign-up">
-                    <input name="credentials[email]" type="email" placeholder="Email"/> <br>
-                    <input name="credentials[password]" type="password" placeholder="Password"/> <br>
-                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"/> <br>
+                    <input name="credentials[email]" type="email" placeholder="Email" required/> <br>
+                    <input name="credentials[password]" type="password" placeholder="Password" required/> <br>
+                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" required/> <br>
                     <button type="submit" class="btn btn-primary">Sign Up</button>
                   </form>
                   <!-- End sign up Form -->
@@ -119,9 +119,57 @@
                   <!-- Create gym form -->
                   <form id="create-gym">
                     <label for="gym[name]">Gym Name</label>
-                    <input name="gym[name]" type="text"> <br>
+                    <input name="gym[name]" type="text" required> <br>
                     <label for="gym[concentration]">Training Type</label>
-                    <select name=gym[concentration]>
+                    <select name=gym[concentration] required>
+                      <option value=""></option>
+                      <option value="Boxing">Boxing</option>
+                      <option value="Brazilian Jiu Jitsu">Brazilian Jiu Jitsu</option>
+                      <option value="Judo">Judo</option>
+                      <option value="Karate">Karate</option>
+                      <option value="Kickboxing">Kickboxing</option>
+                      <option value="MMA">MMA</option>
+                      <option value="Tae Kwon Do">Tae Kwon Do</option>
+                      <option value="Wrestling">Wrestling</option>
+                    </select> <br>
+                    <label for="gym[address][street]" required>Address</label>
+                    <input name="gym[address][street]" type="text" required> <br>
+                    <label for="gym[address][city]">City</label>
+                    <input name="gym[address][city]" type="text" required> <br>
+                    <label for="gym[address][state]">State</label>
+                    <select name=gym[address][state]>
+                      <option value="MA">MA</option>
+                    </select> <br>
+                    <label for="gym[address][zip]">ZIP</label>
+                    <input name="gym[address][zip]" type="text" required> <br>
+                    <label for="gym[hours]">Hours</label>
+                    <input name="gym[hours]" type="text" required> <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                  <!-- End create gym form -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Create Gym Profile modal -->
+
+          <!--  Update Gym Profile Modal -->
+          <div class="modal fade" id="updateGymModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalLabel">Update Gym Profile</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Update gym form -->
+                  <form id="update-gym">
+                    <label for="gym[name]">Gym Name</label>
+                    <input class="gym-name" name="gym[name]" type="text" required> <br>
+                    <label for="gym[concentration]">Training Type</label>
+                    <select class="gym-concentration" name=gym[concentration] required>
                       <option value=""></option>
                       <option value="Boxing">Boxing</option>
                       <option value="Brazilian Jiu Jitsu">Brazilian Jiu Jitsu</option>
@@ -133,20 +181,20 @@
                       <option value="Wrestling">Wrestling</option>
                     </select> <br>
                     <label for="gym[address][street]">Address</label>
-                    <input name="gym[address][street]" type="text"> <br>
+                    <input class="gym-street" name="gym[address][street]" type="text" required> <br>
                     <label for="gym[address][city]">City</label>
-                    <input name="gym[address][city]" type="text"> <br>
+                    <input class="gym-city" name="gym[address][city]" type="text" required> <br>
                     <label for="gym[address][state]">State</label>
-                    <select name=gym[address][state]>
+                    <select class="gym-state" name=gym[address][state]>
                       <option value="MA">MA</option>
                     </select> <br>
                     <label for="gym[address][zip]">ZIP</label>
-                    <input name="gym[address][zip]" type="text"> <br>
+                    <input class="gym-zip" name="gym[address][zip]" type="text" required> <br>
                     <label for="gym[hours]">Hours</label>
-                    <input name="gym[hours]" type="text"> <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input class="gym-hours" name="gym[hours]" type="text" required> <br>
+                    <button type="submit" class="btn btn-primary update-gym-submit">Submit</button>
                   </form>
-                  <!-- End create gym form -->
+                  <!-- End Update Gym Form -->
                 </div>
               </div>
             </div>
@@ -171,8 +219,8 @@
                 <div class="modal-body">
                   <!-- Change PW form -->
                   <form id="changepw">
-                    <input name="passwords[old]" type="password" placeholder="Current Password"> <br>
-                    <input name="passwords[new]" type="password" placeholder="New Password"> <br>
+                    <input name="passwords[old]" type="password" placeholder="Current Password" required> <br>
+                    <input name="passwords[new]" type="password" placeholder="New Password" required> <br>
                     <button type="submit" class="btn btn-primary changepw">Submit</button>
                   </form>
                   <!-- End PW form -->
@@ -282,6 +330,25 @@
         </div>
       </div>
 
+      <!-- Successful Show Gyms Modal -->
+      <div class="modal fade" id="showGymsSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title" id="exampleModalLabel">Showing all registered gyms in the Greater Boston Area!</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Failed Change PWModal -->
       <div class="modal fade" id="changepwFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
@@ -301,50 +368,98 @@
         </div>
       </div>
 
+      <!-- Successful Create Gym Modal -->
+      <div class="modal fade" id="createGymSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Your gym profile was created!</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Failed Create Gym Modal -->
+      <div class="modal fade" id="createGymFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Failed to create gym. Please make sure to properly fill out all fields.</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary create-gym-after-fail">
+                Create Gym
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Successful Update Gym Modal -->
+      <div class="modal fade" id="updateGymSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title" id="exampleModalLabel">Updated gym info. Click 'Refresh' below to get new updated list of gyms!</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary login" data-toggle="modal" data-dismiss="modal">
+                Refresh
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fail Update Gym Modal -->
+      <div class="modal fade" id="updateGymFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Failed to update gym.<br> Please try again.</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary update-gym-after-fail" data-toggle="modal" data-dismiss="modal">
+                Update Gym
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Jumbotron -->
-      <div class="jumbotron">
+      <div class="jumbotron text-center">
         <h1 class="display-4">Mass Martial Arts</h1>
         <p class="lead">Search martial arts gyms in the Greater Boston Area</p>
         <!-- <hr class="my-4"> -->
         <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+
         <!-- SHOW ALL GYMS BUTTON -->
         <button id="show-all" class="btn btn-primary btn-lg">Show All Gyms</button>
+
+        <!-- FILTER GYMS BY CONCENTRATION BUTTON -->
+        <!-- <button id="show-mma" class="btn btn-primary btn-lg">MMA</button> -->
       </div>
 
-      <p class="message"></p>
+      <p class="message text-center"></p>
 
-      <!-- Update gym form -->
-      <form id="update-gym">
-        <h2>Update Gym Profile</h2>
-        <label for="gym[name]">Gym Name</label>
-        <input class="gym-name" name="gym[name]" type="text"> <br>
-        <label for="gym[concentration]">Training Type</label>
-        <select class="gym-concentration" name=gym[concentration]>
-          <option value=""></option>
-          <option value="Boxing">Boxing</option>
-          <option value="Brazilian Jiu Jitsu">Brazilian Jiu Jitsu</option>
-          <option value="Judo">Judo</option>
-          <option value="Karate">Karate</option>
-          <option value="Kickboxing">Kickboxing</option>
-          <option value="MMA">MMA</option>
-          <option value="Tae Kwon Do">Tae Kwon Do</option>
-          <option value="Wrestling">Wrestling</option>
-        </select> <br>
-        <label for="gym[address][street]">Address</label>
-        <input class="gym-street" name="gym[address][street]" type="text"> <br>
-        <label for="gym[address][city]">City</label>
-        <input class="gym-city" name="gym[address][city]" type="text"> <br>
-        <label for="gym[address][state]">State</label>
-        <select class="gym-state" name=gym[address][state]>
-          <option value="MA">MA</option>
-        </select> <br>
-        <label for="gym[address][zip]">ZIP</label>
-        <input class="gym-zip" name="gym[address][zip]" type="text"> <br>
-        <label for="gym[hours]">Hours</label>
-        <input class="gym-hours" name="gym[hours]" type="text"> <br>
-        <button type="submit" class="btn btn-primary update-gym-submit">Submit</button>
-      </form>
-
-      <div class="gyms-list row-cols-1 row-cols-sm-2 row-cols-md-3 card-deck"></div>
+      <div class="gyms-list ml-5 mr-5 row-cols-1 row-cols-sm-2 row-cols-md-3 card-deck"></div>
     </body>
 </html>

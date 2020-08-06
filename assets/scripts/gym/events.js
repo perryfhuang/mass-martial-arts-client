@@ -19,6 +19,11 @@ const onShowAll = function (event) {
     .then(ui.showGymsSuccess)
     .catch(ui.showGymsFail)
 }
+// const onShowMMA = function (event) {
+//   api.showGyms()
+//     .then(ui.showMMAGymsSuccess)
+//     .catch(ui.showMMAGymsFail)
+// }
 
 const onDeleteGym = function (event) {
   const gymId = $(event.target).data('id')
@@ -45,4 +50,5 @@ module.exports = {
   onShowAll,
   onDeleteGym,
   onUpdateGym
+  // onShowMMA
 }
