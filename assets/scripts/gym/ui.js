@@ -1,7 +1,7 @@
 'use strict'
 const gymsHandlebarsTemplate = require('../gyms.handlebars')
 const gymHandlebarsTemplate = require('../gym.handlebars')
-// const gymsMMAHandlebarsTemplate = require('../gyms-mma.handlebars')
+const gymsMMAHandlebarsTemplate = require('../gyms-mma.handlebars')
 const api = require('./api')
 
 const createGymSuccess = function (response) {
@@ -33,17 +33,17 @@ const showGymsFail = function (error) {
   $('form').trigger('reset')
 }
 
-// const showMMAGymsSuccess = function (response) {
-//   $('#showGymsSuccess').modal('show')
-//   const gymsHtml = gymsMMAHandlebarsTemplate({ gyms: response.gyms })
-//   $('.gyms-list').html(gymsHtml)
-//   $('.message').text('Retrieved all MMA gyms from database')
-//   $('form').trigger('reset')
-// }
-// const showMMAGymsFail = function (error) {
-//   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
-//   $('form').trigger('reset')
-// }
+const showMMAGymsSuccess = function (response) {
+  // $('#showGymsSuccess').modal('show')
+  const gymsHtml = gymsMMAHandlebarsTemplate({ gyms: response.gyms })
+  $('.gyms-list').html(gymsHtml)
+  $('.message').text('Retrieved all MMA gyms from database')
+  $('form').trigger('reset')
+}
+const showMMAGymsFail = function (error) {
+  $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
+  $('form').trigger('reset')
+}
 
 const deleteGymSuccess = function () {
   // After successful delete, trigger a get-all-gyms event to refresh list
@@ -111,7 +111,7 @@ module.exports = {
   updateGymSuccess,
   updateGymFail,
   showCreateGymForm,
-  showUpdateGymForm
-  // showMMAGymsSuccess,
-  // showMMAGymsFail
+  showUpdateGymForm,
+  showMMAGymsSuccess,
+  showMMAGymsFail
 }
