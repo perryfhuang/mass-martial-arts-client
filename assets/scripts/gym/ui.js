@@ -1,12 +1,17 @@
 'use strict'
 const gymsHandlebarsTemplate = require('../gyms.handlebars')
+const gymHandlebarsTemplate = require('../gym.handlebars')
 
-const createGymSuccess = function () {
+const createGymSuccess = function (response) {
+  console.log(response)
   $('.message').text('Your gym was added to the database!')
   $('form').trigger('reset')
+  const gymHtml = gymHandlebarsTemplate({ gym: response.gym })
+  // APPEND NEW GYM TO CURRENT LIST
+  $('.gyms-list').append(gymHtml)
 }
-const createGymFail = function (error) {
-  $('.message').text('Failed to create gym.\nSee error message: ' + error.message)
+const createGymFail = function () {
+  $('.message').text('Failed to create gym.')
   $('form').trigger('reset')
 }
 
