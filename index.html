@@ -10,6 +10,7 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="https://kit.fontawesome.com/3759e8d44c.js" crossorigin="anonymous"></script>
     </head>
     <body>
       <!-- Start navbar -->
@@ -43,7 +44,7 @@
           </ul>
 
           <!-- Button to trigger login modal -->
-          <button type="button" class="btn btn-primary login mr-2" data-toggle="modal" data-target="#loginModal">
+          <button type="button" class="btn btn-secondary login mr-2" data-toggle="modal" data-target="#loginModal">
             Login
           </button>
 
@@ -53,8 +54,8 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
+                    <span aria-hidden="true">×</span>
+                  </button>
                 </div>
                 <div class="modal-body text-center">
                   <!-- Log in form -->
@@ -62,7 +63,7 @@
                   <form id="login">
                     <input name="credentials[email]" type="email" placeholder="Email" value="p@h.com" class="mt-3 mb-2" required><br>
                     <input name="credentials[password]" type="password" placeholder="Password" value="p" required><br>
-                    <button type="submit" class="btn btn-primary mt-3">Login</button>
+                    <button type="submit" class="btn btn-secondary mt-3">Login</button>
                   </form>
                   <!-- End log in form -->
                   <div class="redirect-container">
@@ -75,7 +76,7 @@
           <!-- End login modal -->
 
           <!-- Button to trigger sign up modal -->
-          <button type="button" class="btn btn-primary signup" data-toggle="modal" data-target="#signUpModal">
+          <button type="button" class="btn btn-secondary signup" data-toggle="modal" data-target="#signUpModal">
             Sign Up
           </button>
 
@@ -97,7 +98,7 @@
                     <input name="credentials[email]" type="email" placeholder="Email" class="mb-2" required/> <br>
                     <input name="credentials[password]" type="password" placeholder="Password" class="mb-2" required/> <br>
                     <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="mb-3" required/> <br>
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="submit" class="btn btn-secondary">Sign Up</button>
                   </form>
                   <!-- End sign up Form -->
                   <div class="redirect-container">
@@ -109,10 +110,26 @@
           </div>
           <!-- End sign up modal -->
 
-          <!-- Button to trigger create gym modal -->
-          <button type="button" class="btn btn-primary create-gym" data-toggle="modal" data-target="#createGymModal">
-            Create Gym Profile
-          </button>
+          <a class="btn btn-primary user-button" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <!-- 'USER' ICON -->
+            <i class="fas fa-user fa-lg"></i>
+          </a>
+          <div class="collapse" id="collapseExample">
+            <!-- Button to trigger create gym modal -->
+            <button type="button" class="btn btn-secondary create-gym ml-3" data-toggle="modal" data-target="#createGymModal">
+              Create Gym Profile
+            </button>
+
+            <!-- Button to trigger change pw modal -->
+            <button type="button" class="btn btn-secondary changepw ml-2" data-toggle="modal" data-target="#changepwModal">
+              Change Password
+            </button>
+
+            <!-- Logout Button -->
+            <button id="logout" class="btn btn-secondary ml-2">Logout</button>
+          </div>
+
+
 
           <!--  Create Gym Profile Modal -->
           <div class="modal fade" id="createGymModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -154,7 +171,7 @@
                     <input name="gym[address][zip]" type="number" required> <br>
                     <label for="gym[hours]">Hours</label>
                     <input name="gym[hours]" type="text" required> <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-secondary">Submit</button>
                   </form>
                   <!-- End create gym form -->
                 </div>
@@ -203,7 +220,7 @@
                     <input class="gym-zip" name="gym[address][zip]" type="number" required> <br>
                     <label for="gym[hours]">Hours</label>
                     <input class="gym-hours" name="gym[hours]" type="text" required> <br>
-                    <button type="submit" class="btn btn-primary update-gym-submit">Submit</button>
+                    <button type="submit" class="btn btn-secondary update-gym-submit">Submit</button>
                   </form>
                   <!-- End Update Gym Form -->
                 </div>
@@ -212,27 +229,22 @@
           </div>
           <!-- End Create Gym Profile modal -->
 
-          <!-- Button to trigger change pw modal -->
-          <button type="button" class="btn btn-primary changepw" data-toggle="modal" data-target="#changepwModal">
-            Change Password
-          </button>
-
           <!--  Change PW Modal -->
           <div class="modal fade" id="changepwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
               <div class="modal-content">
-                <div class="modal-dialog text-center">
-                  <h2 class="modal-title" id="exampleModalLabel">Change Password</h2>
+                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                  <h2 class="modal-title" id="exampleModalLabel">Change Password</h2>
                   <!-- Change PW form -->
                   <form id="changepw">
-                    <input name="passwords[old]" type="password" placeholder="Current Password" required> <br>
+                    <input name="passwords[old]" type="password" placeholder="Current Password" class="mt-3 mb-2" required> <br>
                     <input name="passwords[new]" type="password" placeholder="New Password" required> <br>
-                    <button type="submit" class="btn btn-primary changepw">Submit</button>
+                    <button type="submit" class="btn btn-secondary changepw mt-3 mb-4">Submit</button>
                   </form>
                   <!-- End PW form -->
                 </div>
@@ -240,9 +252,6 @@
             </div>
           </div>
           <!-- End change pw modal -->
-
-          <!-- Logout Button -->
-          <button id="logout" class="btn btn-primary">Logout</button>
         </div>
       </nav>
 
@@ -254,7 +263,7 @@
               <p class="modal-title" id="exampleModalLabel">Account created!</p>
             </div>
             <div class="modal-body text-center">
-              <button type="button" class="btn btn-primary login-after-signup" data-toggle="modal" data-target="#loginModal">
+              <button type="button" class="btn btn-secondary login-after-signup" data-toggle="modal" data-target="#loginModal">
                 Login
               </button>
             </div>
@@ -270,7 +279,7 @@
               <p class="modal-title" id="exampleModalLabel">Account is taken or<br>passwords do not match.<br>Please try again.</p>
             </div>
             <div class="modal-body text-center">
-              <button type="button" class="btn btn-primary sign-up-after-fail" data-toggle="modal" data-target="#signUpFail">
+              <button type="button" class="btn btn-secondary sign-up-after-fail" data-toggle="modal" data-target="#signUpFail">
                 Sign Up
               </button>
             </div>
@@ -286,7 +295,7 @@
               <p class="modal-title" id="exampleModalLabel">Successfully logged in!</p>
             </div>
             <div class="modal-body text-center">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-dismiss="modal">
                 Close
               </button>
             </div>
@@ -302,7 +311,7 @@
               <p class="modal-title" id="exampleModalLabel">Login failed.<br>Please check credentials.</p>
             </div>
             <div class="modal-body text-center">
-              <button type="button" class="btn btn-primary login" data-toggle="modal" data-dismiss="modal">
+              <button type="button" class="btn btn-secondary login" data-toggle="modal" data-dismiss="modal">
                 Login
               </button>
             </div>
@@ -314,14 +323,11 @@
       <div class="modal fade" id="changepwSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-dialog text-center">
-              <h2 class="modal-title" id="exampleModalLabel">Password changed!</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Password changed!</p>
             </div>
-            <div class="modal-body">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-dismiss="modal">
                 Close
               </button>
             </div>
@@ -340,7 +346,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-dismiss="modal">
                 Close
               </button>
             </div>
@@ -352,15 +358,28 @@
       <div class="modal fade" id="changepwFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-dialog text-center">
-              <h2 class="modal-title" id="exampleModalLabel">Failed to change password, please try again.</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Failed to change password.<br>Please try again.</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-secondary changepw-after-fail">
+                Change Password
               </button>
             </div>
-            <div class="modal-body">
-              <button type="button" class="btn btn-primary changepw-after-fail">
-                Change Password
+          </div>
+        </div>
+      </div>
+
+      <!-- Successful Logout Modal -->
+      <div class="modal fade" id="logoutSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Successfully logged out.<br>Cya later!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-dismiss="modal">
+                Close
               </button>
             </div>
           </div>
@@ -378,7 +397,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-dismiss="modal">
                 Close
               </button>
             </div>
@@ -397,7 +416,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <button type="button" class="btn btn-primary create-gym-after-fail">
+              <button type="button" class="btn btn-secondary create-gym-after-fail">
                 Create Gym
               </button>
             </div>
@@ -416,7 +435,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <button type="button" class="btn btn-primary login" data-toggle="modal" data-dismiss="modal">
+              <button type="button" class="btn btn-secondary login" data-toggle="modal" data-dismiss="modal">
                 Refresh
               </button>
             </div>
@@ -435,7 +454,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <button type="button" class="btn btn-primary update-gym-after-fail" data-toggle="modal" data-dismiss="modal">
+              <button type="button" class="btn btn-secondary update-gym-after-fail" data-toggle="modal" data-dismiss="modal">
                 Update Gym
               </button>
             </div>
@@ -480,18 +499,18 @@
         <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
 
         <!-- SHOW ALL GYMS BUTTON -->
-        <button id="show-all" class="btn btn-primary btn-lg mb-4 mt-4">Show All Gyms</button> <br>
+        <button id="show-all" class="btn btn-secondary btn-lg mb-4 mt-4">Show All Gyms</button> <br>
 
         <!-- FILTER GYMS BY CONCENTRATION -->
-        <button id="show-boxing" class="btn btn-primary btn-lg">Boxing</button>
-        <button id="show-bjj" class="btn btn-primary btn-lg">Brazilian Jiu Jitsu (BJJ)</button>
-        <button id="show-judo" class="btn btn-primary btn-lg">Judo</button>
-        <button id="show-karate" class="btn btn-primary btn-lg">Karate</button>
-        <button id="show-kickboxing" class="btn btn-primary btn-lg">Kickboxing</button>
-        <button id="show-mma" class="btn btn-primary btn-lg">Mixed Martial Arts (MMA)</button>
-        <button id="show-muay-thai" class="btn btn-primary btn-lg">Muay Thai</button>
-        <button id="show-tkd" class="btn btn-primary btn-lg">Tae Kwon Do</button>
-        <button id="show-wrestling" class="btn btn-primary btn-lg">Wrestling</button>
+        <button id="show-boxing" class="btn btn-secondary btn-lg">Boxing</button>
+        <button id="show-bjj" class="btn btn-secondary btn-lg">Brazilian Jiu Jitsu (BJJ)</button>
+        <button id="show-judo" class="btn btn-secondary btn-lg">Judo</button>
+        <button id="show-karate" class="btn btn-secondary btn-lg">Karate</button>
+        <button id="show-kickboxing" class="btn btn-secondary btn-lg">Kickboxing</button>
+        <button id="show-mma" class="btn btn-secondary btn-lg">Mixed Martial Arts (MMA)</button>
+        <button id="show-muay-thai" class="btn btn-secondary btn-lg">Muay Thai</button>
+        <button id="show-tkd" class="btn btn-secondary btn-lg">Tae Kwon Do</button>
+        <button id="show-wrestling" class="btn btn-secondary btn-lg">Wrestling</button>
 
       </div>
 

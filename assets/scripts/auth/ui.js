@@ -18,7 +18,7 @@ const loginSuccess = function (response) {
   $('.message').text('Succesfully logged in.')
   $('form').trigger('reset')
   $('.login, .signup').hide()
-  $('.changepw, #logout, .create-gym').show()
+  $('.changepw, #logout, .create-gym, .fas, .user-button').show()
   $('#loginSuccess').modal('show')
   $('#loginModal').modal('hide')
 
@@ -49,6 +49,9 @@ const logoutSuccess = function () {
   $('.message').text('Succesfully logged out.\nCya later!')
   $('form').trigger('reset')
   store.user = null
+  $('#logout, .changepw, .create-gym, .fas, .user-button').hide()
+  $('.login, .signup').show()
+  $('#logoutSuccess').modal('show')
   // $('#main-menu').fadeIn(500)
   // $('#logout, #new-game, #stats, #show-changepw, #change-pw').hide()
 }
