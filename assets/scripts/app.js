@@ -16,6 +16,10 @@ $(() => {
   $('#changepw').on('submit', authEvents.onChangepw)
   $('#logout').on('click', authEvents.onLogout)
 
+  // Redirect modal links
+  $('.signUp').on('click', uiAuthEvents.signUp)
+  $('.login').on('click', uiAuthEvents.login)
+
   // Login button listener for immediately AFTER user has signed up
   $('.login-after-signup').on('click', uiAuthEvents.loginAfterSignUp)
 

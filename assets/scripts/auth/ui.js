@@ -17,8 +17,11 @@ const signUpFail = function () {
 const loginSuccess = function (response) {
   $('.message').text('Succesfully logged in.')
   $('form').trigger('reset')
+  $('.login, .signup').hide()
+  $('.changepw, #logout, .create-gym').show()
   $('#loginSuccess').modal('show')
   $('#loginModal').modal('hide')
+
   store.user = response.user
   console.log(store)
 }
@@ -74,6 +77,15 @@ const changepwAfterFail = function () {
   $('#changepwModal').modal('show')
 }
 
+const signUp = function () {
+  $('#loginModal').modal('hide')
+  $('#signUpModal').modal('show')
+}
+const login = function () {
+  $('#loginModal').modal('show')
+  $('#signUpModal').modal('hide')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFail,
@@ -86,5 +98,7 @@ module.exports = {
   loginAfterSignUp,
   loginAfterFail,
   signUpAfterFail,
-  changepwAfterFail
+  changepwAfterFail,
+  signUp,
+  login
 }

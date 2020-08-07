@@ -52,19 +52,22 @@
             <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h2 class="modal-title" id="exampleModalLabel">Login</h2>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                  <span aria-hidden="true">×</span>
+                </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
                   <!-- Log in form -->
+                  <h2 class="modal-title d-inline-block" id="exampleModalLabel">Welcome Back</h2>
                   <form id="login">
-                    <input name="credentials[email]" type="email" placeholder="Email" value="p@h.com" required><br>
+                    <input name="credentials[email]" type="email" placeholder="Email" value="p@h.com" class="mt-3 mb-2" required><br>
                     <input name="credentials[password]" type="password" placeholder="Password" value="p" required><br>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary mt-3">Login</button>
                   </form>
                   <!-- End log in form -->
+                  <div class="redirect-container">
+                    <p class="modal-redirect mt-4 mb-4">No account yet? <a href="#" class="signUp">Sign up</a>!</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,20 +84,25 @@
             <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h2 class="modal-title" id="exampleModalLabel">Sign Up</h2>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                  <span aria-hidden="true">×</span>
+                </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                  <h2 class="modal-title" id="exampleModalLabel">Sign Up</h2>
+                </div>
+                <div class="text-center">
                   <!-- Sign up form -->
                   <form id="sign-up">
-                    <input name="credentials[email]" type="email" placeholder="Email" required/> <br>
-                    <input name="credentials[password]" type="password" placeholder="Password" required/> <br>
-                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" required/> <br>
+                    <input name="credentials[email]" type="email" placeholder="Email" class="mb-2" required/> <br>
+                    <input name="credentials[password]" type="password" placeholder="Password" class="mb-2" required/> <br>
+                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="mb-3" required/> <br>
                     <button type="submit" class="btn btn-primary">Sign Up</button>
                   </form>
                   <!-- End sign up Form -->
+                  <div class="redirect-container">
+                    <p class="modal-redirect mt-4 mb-5">Already have an account? <a href="#" class="login">Login!</a></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -110,7 +118,7 @@
           <div class="modal fade" id="createGymModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-dialog text-center">
                   <h2 class="modal-title" id="exampleModalLabel">Create Gym Profile</h2>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -159,7 +167,7 @@
           <div class="modal fade" id="updateGymModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-dialog text-center">
                   <h2 class="modal-title" id="exampleModalLabel">Update Gym Profile</h2>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -213,7 +221,7 @@
           <div class="modal fade" id="changepwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-dialog text-center">
                   <h2 class="modal-title" id="exampleModalLabel">Change Password</h2>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -242,7 +250,7 @@
       <div class="modal fade" id="signUpSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <h2 class="modal-title" id="exampleModalLabel">Successfully signed up!</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -261,7 +269,7 @@
       <div class="modal fade" id="signUpFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <h2 class="modal-title" id="exampleModalLabel">Account is taken, please try again.</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -280,14 +288,11 @@
       <div class="modal fade" id="loginSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalLabel">Successfully logged in!</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Successfully logged in!</p>
             </div>
-            <div class="modal-body">
-              <button type="button" class="btn btn-primary login" data-toggle="modal" data-dismiss="modal">
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
                 Close
               </button>
             </div>
@@ -299,15 +304,12 @@
       <div class="modal fade" id="loginFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalLabel">Login failed.<br> Please check credentials.</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Login failed. Please check credentials</p>
             </div>
-            <div class="modal-body">
-              <button type="button" class="btn btn-primary login-after-fail" data-toggle="modal" data-dismiss="modal">
-                Login
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
               </button>
             </div>
           </div>
@@ -318,7 +320,7 @@
       <div class="modal fade" id="changepwSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <h2 class="modal-title" id="exampleModalLabel">Password changed!</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -337,7 +339,7 @@
       <div class="modal fade" id="showGymsSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <p class="modal-title" id="exampleModalLabel">Showing all registered gyms in the Greater Boston Area!</p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -356,7 +358,7 @@
       <div class="modal fade" id="changepwFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <h2 class="modal-title" id="exampleModalLabel">Failed to change password, please try again.</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -375,7 +377,7 @@
       <div class="modal fade" id="createGymSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <h2 class="modal-title" id="exampleModalLabel">Your gym profile was created!</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -394,7 +396,7 @@
       <div class="modal fade" id="createGymFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <h2 class="modal-title" id="exampleModalLabel">Failed to create gym. Please make sure to properly fill out all fields.</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -413,7 +415,7 @@
       <div class="modal fade" id="updateGymSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <p class="modal-title" id="exampleModalLabel">Updated gym info. Click 'Refresh' below to get new updated list of gyms!</p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -432,7 +434,7 @@
       <div class="modal fade" id="updateGymFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-dialog text-center">
               <h2 class="modal-title" id="exampleModalLabel">Failed to update gym.<br> Please try again.</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
