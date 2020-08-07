@@ -110,6 +110,7 @@
           </div>
           <!-- End sign up modal -->
 
+          <!-- Show/hide menu start -->
           <a class="btn btn-primary user-button" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             <!-- 'USER' ICON -->
             <i class="fas fa-user fa-lg"></i>
@@ -128,22 +129,21 @@
             <!-- Logout Button -->
             <button id="logout" class="btn btn-secondary ml-2">Logout</button>
           </div>
-
-
+          <!-- Show/Hide Menu End -->
 
           <!--  Create Gym Profile Modal -->
           <div class="modal fade" id="createGymModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-dialog text-center">
-                  <h2 class="modal-title" id="exampleModalLabel">Create Gym Profile</h2>
+                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                  <h2 class="modal-title" id="exampleModalLabel">Create Gym Profile</h2>
                   <!-- Create gym form -->
-                  <form id="create-gym">
+                  <form id="create-gym" class="mt-4">
                     <label for="gym[name]">Gym Name</label>
                     <input name="gym[name]" type="text" required> <br>
                     <label for="gym[concentration]">Training Type</label>
@@ -171,7 +171,7 @@
                     <input name="gym[address][zip]" type="number" required> <br>
                     <label for="gym[hours]">Hours</label>
                     <input name="gym[hours]" type="text" required> <br>
-                    <button type="submit" class="btn btn-secondary">Submit</button>
+                    <button type="submit" class="btn btn-secondary mt-4 mb-4">Submit</button>
                   </form>
                   <!-- End create gym form -->
                 </div>
@@ -184,15 +184,15 @@
           <div class="modal fade" id="updateGymModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-dialog text-center">
-                  <h2 class="modal-title" id="exampleModalLabel">Update Gym Profile</h2>
+                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                  <h2 class="modal-title" id="exampleModalLabel">Update Gym Profile</h2>
                   <!-- Update gym form -->
-                  <form id="update-gym">
+                  <form id="update-gym" class="mt-4">
                     <label for="gym[name]">Gym Name</label>
                     <input class="gym-name" name="gym[name]" type="text" required> <br>
                     <label for="gym[concentration]">Training Type</label>
@@ -220,7 +220,7 @@
                     <input class="gym-zip" name="gym[address][zip]" type="number" required> <br>
                     <label for="gym[hours]">Hours</label>
                     <input class="gym-hours" name="gym[hours]" type="text" required> <br>
-                    <button type="submit" class="btn btn-secondary update-gym-submit">Submit</button>
+                    <button type="submit" class="btn btn-secondary update-gym-submit mt-4 mb-4">Submit</button>
                   </form>
                   <!-- End Update Gym Form -->
                 </div>
@@ -252,6 +252,7 @@
             </div>
           </div>
           <!-- End change pw modal -->
+
         </div>
       </nav>
 
