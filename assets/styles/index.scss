@@ -4,9 +4,9 @@
   display: none;
 }
 
-// body {
-//   background-color: black;
-// }
+body {
+  background-color: black;
+}
 
 .message {
   color: white;
@@ -26,6 +26,11 @@
 
 .modal-header {
     border-bottom: 0 none;
+}
+
+.jumbotron {
+  background-color: #292b2c;
+  color: white;
 }
 
 // .modal-backdrop {
