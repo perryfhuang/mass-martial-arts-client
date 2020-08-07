@@ -44,7 +44,7 @@
           </ul>
 
           <!-- Button to trigger login modal -->
-          <button type="button" class="btn btn-secondary login mr-2" data-toggle="modal" data-target="#loginModal">
+          <button type="button" class="btn btn-sm btn-secondary login mr-2" data-toggle="modal" data-target="#loginModal">
             Login
           </button>
 
@@ -76,7 +76,7 @@
           <!-- End login modal -->
 
           <!-- Button to trigger sign up modal -->
-          <button type="button" class="btn btn-secondary signup" data-toggle="modal" data-target="#signUpModal">
+          <button type="button" class="btn btn-sm btn-secondary signup" data-toggle="modal" data-target="#signUpModal">
             Sign Up
           </button>
 
@@ -117,17 +117,17 @@
           </a>
           <div class="collapse" id="collapseExample">
             <!-- Button to trigger create gym modal -->
-            <button type="button" class="btn btn-secondary create-gym ml-3" data-toggle="modal" data-target="#createGymModal">
+            <button type="button" class="btn btn-sm btn-secondary create-gym ml-3" data-toggle="modal" data-target="#createGymModal">
               Create Gym Profile
             </button>
 
             <!-- Button to trigger change pw modal -->
-            <button type="button" class="btn btn-secondary changepw ml-2" data-toggle="modal" data-target="#changepwModal">
+            <button type="button" class="btn btn-sm btn-secondary changepw ml-2" data-toggle="modal" data-target="#changepwModal">
               Change Password
             </button>
 
             <!-- Logout Button -->
-            <button id="logout" class="btn btn-secondary ml-2">Logout</button>
+            <button id="logout" class="btn btn-sm btn-secondary ml-2">Logout</button>
           </div>
           <!-- Show/Hide Menu End -->
 
@@ -429,14 +429,11 @@
       <div class="modal fade" id="updateGymSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-dialog text-center">
-              <p class="modal-title" id="exampleModalLabel">Updated gym info. Click 'Refresh' below to get new updated list of gyms!</p>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Updated gym info!<br><br>Click 'Refresh' below to view new updated list of gyms.</p>
             </div>
-            <div class="modal-body">
-              <button type="button" class="btn btn-secondary login" data-toggle="modal" data-dismiss="modal">
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-dismiss="modal">
                 Refresh
               </button>
             </div>
