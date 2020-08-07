@@ -250,13 +250,10 @@
       <div class="modal fade" id="signUpSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-dialog text-center">
-              <h2 class="modal-title" id="exampleModalLabel">Successfully signed up!</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Account created!</p>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
               <button type="button" class="btn btn-primary login-after-signup" data-toggle="modal" data-target="#loginModal">
                 Login
               </button>
@@ -269,13 +266,10 @@
       <div class="modal fade" id="signUpFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-dialog text-center">
-              <h2 class="modal-title" id="exampleModalLabel">Account is taken, please try again.</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Account is taken or<br>passwords do not match.<br>Please try again.</p>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
               <button type="button" class="btn btn-primary sign-up-after-fail" data-toggle="modal" data-target="#signUpFail">
                 Sign Up
               </button>
@@ -305,11 +299,11 @@
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header text-center d-block">
-              <p class="modal-title" id="exampleModalLabel">Login failed. Please check credentials</p>
+              <p class="modal-title" id="exampleModalLabel">Login failed.<br>Please check credentials.</p>
             </div>
             <div class="modal-body text-center">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
-                Close
+              <button type="button" class="btn btn-primary login" data-toggle="modal" data-dismiss="modal">
+                Login
               </button>
             </div>
           </div>

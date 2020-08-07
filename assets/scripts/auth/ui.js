@@ -83,7 +83,7 @@ const signUp = function () {
 }
 const login = function () {
   $('#loginModal').modal('show')
-  $('#signUpModal').modal('hide')
+  $('#signUpModal, #loginFail').modal('hide')
 }
 
 module.exports = {
