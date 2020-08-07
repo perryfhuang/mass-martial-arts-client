@@ -29,6 +29,41 @@ const onShowBoxing = function () {
     .then(ui.showBoxingGymsSuccess)
     .catch(ui.showBoxingGymsFail)
 }
+const onShowBJJ = function () {
+  api.showGyms()
+    .then(ui.showBJJGymsSuccess)
+    .catch(ui.showBJJGymsFail)
+}
+const onShowJudo = function () {
+  api.showGyms()
+    .then(ui.showJudoGymsSuccess)
+    .catch(ui.showJudoGymsFail)
+}
+const onShowKarate = function () {
+  api.showGyms()
+    .then(ui.showKarateGymsSuccess)
+    .catch(ui.showKarateGymsFail)
+}
+const onShowKickboxing = function () {
+  api.showGyms()
+    .then(ui.showKickboxingGymsSuccess)
+    .catch(ui.showKickboxingGymsFail)
+}
+const onShowMuayThai = function () {
+  api.showGyms()
+    .then(ui.showMuayThaiGymsSuccess)
+    .catch(ui.showMuayThaiGymsFail)
+}
+const onShowTKD = function () {
+  api.showGyms()
+    .then(ui.showTKDGymsSuccess)
+    .catch(ui.showTKDGymsFail)
+}
+const onShowWrestling = function () {
+  api.showGyms()
+    .then(ui.showWrestlingGymsSuccess)
+    .catch(ui.showWrestlingGymsFail)
+}
 
 const onDeleteGym = function (event) {
   const gymId = $(event.target).data('id')
@@ -56,5 +91,12 @@ module.exports = {
   onDeleteGym,
   onUpdateGym,
   onShowMMA,
-  onShowBoxing
+  onShowBoxing,
+  onShowBJJ,
+  onShowJudo,
+  onShowKarate,
+  onShowKickboxing,
+  onShowMuayThai,
+  onShowTKD,
+  onShowWrestling
 }

@@ -4,13 +4,39 @@
   display: none;
 }
 
-// #logout {
-//   display: none;
+// body {
+//   background-color: black;
 // }
-//
-// .changepw {
-//   display: none;
+
+.message {
+  color: white;
+}
+
+#logout {
+  display: none;
+}
+
+.changepw {
+  display: none;
+}
+
+.create-gym {
+  display: none;
+}
+
+// .modal-backdrop {
+//    background-color: black;
 // }
+// .overlay {
+//   display: none;
+//   position: fixed; /* Positioning and size */
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: black; /* color */
+// }
+
 // .gyms-list {
 //   margin-left: 20rem;
 //   margin-right: 20rem;

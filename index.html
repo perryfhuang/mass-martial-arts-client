@@ -41,6 +41,7 @@
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
           </ul>
+
           <!-- Button to trigger login modal -->
           <button type="button" class="btn btn-primary login mr-2" data-toggle="modal" data-target="#loginModal">
             Login
@@ -101,7 +102,7 @@
           <!-- End sign up modal -->
 
           <!-- Button to trigger create gym modal -->
-          <button type="button" class="btn btn-primary changepw" data-toggle="modal" data-target="#createGymModal">
+          <button type="button" class="btn btn-primary create-gym" data-toggle="modal" data-target="#createGymModal">
             Create Gym Profile
           </button>
 
@@ -142,7 +143,7 @@
                       <option value="MA">MA</option>
                     </select> <br>
                     <label for="gym[address][zip]">ZIP</label>
-                    <input name="gym[address][zip]" type="text" required> <br>
+                    <input name="gym[address][zip]" type="number" required> <br>
                     <label for="gym[hours]">Hours</label>
                     <input name="gym[hours]" type="text" required> <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -191,7 +192,7 @@
                       <option value="MA">MA</option>
                     </select> <br>
                     <label for="gym[address][zip]">ZIP</label>
-                    <input class="gym-zip" name="gym[address][zip]" type="text" required> <br>
+                    <input class="gym-zip" name="gym[address][zip]" type="number" required> <br>
                     <label for="gym[hours]">Hours</label>
                     <input class="gym-hours" name="gym[hours]" type="text" required> <br>
                     <button type="submit" class="btn btn-primary update-gym-submit">Submit</button>
