@@ -43,7 +43,6 @@ const showGymsSuccess = function (response) {
 }
 const showGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
-  console.log('not logged in')
   $('form').trigger('reset')
 }
 
