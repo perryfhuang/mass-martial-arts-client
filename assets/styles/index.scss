@@ -29,7 +29,7 @@ body {
 }
 
 .jumbotron {
-  background-color: #292b2c;
+  background-color: black;
   color: white;
 }
 
@@ -37,6 +37,13 @@ body {
   display: none;
 }
 
+.navbar{
+  background-color: black !important;
+}
+
+.description {
+  width: 60%;
+}
 // .modal-backdrop {
 //    background-color: black;
 // }
