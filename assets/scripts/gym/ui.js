@@ -10,6 +10,7 @@ const gymsKickboxingHandlebarsTemplate = require('../handlebars/gyms-kickboxing.
 const gymsMuayThaiHandlebarsTemplate = require('../handlebars/gyms-muay-thai.handlebars')
 const gymsTKDHandlebarsTemplate = require('../handlebars/gyms-tkd.handlebars')
 const gymsWrestlingHandlebarsTemplate = require('../handlebars/gyms-wrestling.handlebars')
+const getGymsModalHandlebarsTemplate = require('../handlebars/get-gyms-modal.handlebars')
 const api = require('./api')
 
 const createGymSuccess = function (response) {
@@ -20,6 +21,7 @@ const createGymSuccess = function (response) {
   // APPEND NEW GYM TO CURRENT LIST
   $('.gyms-list').append(gymHtml)
   $('#createGymModal').modal('hide')
+  $('#createGymSuccess').modal('show')
 }
 const createGymFail = function () {
   $('.message').text('Failed to create gym.')
@@ -31,6 +33,9 @@ const createGymFail = function () {
 const showGymsSuccess = function (response) {
   console.log(response)
   // $('#showGymsSuccess').modal('show')
+  const getGymsModal = getGymsModalHandlebarsTemplate()
+  $('body').append(getGymsModal)
+  $('#getGymsSuccess').modal('show')
   const gymsHtml = gymsHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all gyms from database')
@@ -42,11 +47,11 @@ const showGymsFail = function (error) {
 }
 
 const showMMAGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsMMAHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all MMA gyms from database')
   $('form').trigger('reset')
+  $('#getMMAGyms').modal('show')
 }
 const showMMAGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -59,6 +64,7 @@ const showBoxingGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all boxing gyms from database')
   $('form').trigger('reset')
+  $('#getBoxingGyms').modal('show')
 }
 const showBoxingGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -71,6 +77,7 @@ const showBJJGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all BJJ gyms from database')
   $('form').trigger('reset')
+  $('#getBJJSuccess').modal('show')
 }
 const showBJJGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -83,6 +90,7 @@ const showJudoGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all judo gyms from database')
   $('form').trigger('reset')
+  $('#getJudoGyms').modal('show')
 }
 const showJudoGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -95,6 +103,7 @@ const showKarateGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all karate gyms from database')
   $('form').trigger('reset')
+  $('#getKarateGyms').modal('show')
 }
 const showKarateGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -107,6 +116,7 @@ const showKickboxingGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all kickboxing gyms from database')
   $('form').trigger('reset')
+  $('#getKickboxingGyms').modal('show')
 }
 const showKickboxingGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -119,6 +129,7 @@ const showMuayThaiGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all Muay Thai gyms from database')
   $('form').trigger('reset')
+  $('#getMuayThaiGyms').modal('show')
 }
 const showMuayThaiGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -131,6 +142,7 @@ const showTKDGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all Tae Kwon Do gyms from database')
   $('form').trigger('reset')
+  $('#getTKDGyms').modal('show')
 }
 const showTKDGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)
@@ -143,6 +155,7 @@ const showWrestlingGymsSuccess = function (response) {
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all wrestling gyms from database')
   $('form').trigger('reset')
+  $('#getWrestlingGyms').modal('show')
 }
 const showWrestlingGymsFail = function (error) {
   $('.message').text('Failed to retrieve gyms from database.\nSee error message: ' + error.message)

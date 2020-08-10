@@ -259,27 +259,11 @@
       <!-- End NavBar -->
 
       <!-- Jumbotron -->
-      <div class="jumbotron text-center mb-0">
+      <div class="jumbotron text-center mb-0 pt-5 pb-4">
         <img src="./public/mass-martial-arts-header.png" width="703" height="104"/>
         <p>A library of the top martial arts gyms in the Greater Boston Area</p>
 
         <!-- <p>Browse and search top gyms by training concentration. Are you a gym owner or employee? Or do you train at a gym and don't see your gym represented? Create an account to register your gym in the database!</p> -->
-
-        <div class="filters text-center">
-          <!-- SHOW ALL GYMS BUTTON -->
-          <button id="show-all" class="btn btn-primary btn-lg mb-4 mt-4">Show All Gyms</button> <br>
-
-          <!-- FILTER GYMS BY CONCENTRATION -->
-          <button id="show-boxing" class="btn btn-sm btn-outline-light btn-lg">Boxing</button>
-          <button id="show-bjj" class="btn btn-sm btn-outline-light btn-lg">Brazilian Jiu Jitsu (BJJ)</button>
-          <button id="show-judo" class="btn btn-sm btn-outline-light btn-lg">Judo</button>
-          <button id="show-karate" class="btn btn-sm btn-outline-light btn-lg">Karate</button>
-          <button id="show-kickboxing" class="btn btn-sm btn-outline-light btn-lg">Kickboxing</button><br>
-          <button id="show-mma" class="btn btn-sm btn-outline-light btn-lg mt-2">Mixed Martial Arts (MMA)</button>
-          <button id="show-muay-thai" class="btn btn-sm btn-outline-light btn-lg mt-2">Muay Thai</button>
-          <button id="show-tkd" class="btn btn-sm btn-outline-light btn-lg mt-2">Tae Kwon Do</button>
-          <button id="show-wrestling" class="btn btn-sm btn-outline-light btn-lg mt-2">Wrestling</button>
-        </div>
       </div>
 
       <!-- Successful Sign Up Modal -->
@@ -417,13 +401,10 @@
       <div class="modal fade" id="createGymSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-dialog text-center">
-              <h2 class="modal-title" id="exampleModalLabel">Your gym profile was created!</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Your gym was added to the database!</p>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
                 Close
               </button>
@@ -518,8 +499,154 @@
         </a>
       </div>
 
+      <div class="filters text-center">
+        <!-- SHOW ALL GYMS BUTTON -->
+        <button id="show-all" class="btn btn-primary btn-lg mb-4 mt-4">Show All Gyms</button> <br>
+
+        <!-- FILTER GYMS BY CONCENTRATION -->
+        <button id="show-boxing" class="btn btn-sm btn-outline-light btn-lg">Boxing</button>
+        <button id="show-bjj" class="btn btn-sm btn-outline-light btn-lg">Brazilian Jiu Jitsu (BJJ)</button>
+        <button id="show-judo" class="btn btn-sm btn-outline-light btn-lg">Judo</button>
+        <button id="show-karate" class="btn btn-sm btn-outline-light btn-lg">Karate</button>
+        <button id="show-kickboxing" class="btn btn-sm btn-outline-light btn-lg">Kickboxing</button><br>
+        <button id="show-mma" class="btn btn-sm btn-outline-light btn-lg mt-2">Mixed Martial Arts (MMA)</button>
+        <button id="show-muay-thai" class="btn btn-sm btn-outline-light btn-lg mt-2">Muay Thai</button>
+        <button id="show-tkd" class="btn btn-sm btn-outline-light btn-lg mt-2">Tae Kwon Do</button>
+        <button id="show-wrestling" class="btn btn-sm btn-outline-light btn-lg mt-2">Wrestling</button>
+      </div>
+
+      <div class="modal fade" id="getBJJSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all Brazilian jiu-jitsu (BJJ) gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="getBoxingGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all boxing gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="getJudoGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all judo gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="getKarateGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all karate gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="getKickboxingGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all kickboxing gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="getMMAGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all mixed martial arts (MMA) gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="getMuayThaiGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all Muay Thai gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="getTKDGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all Tae Kwon Do gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="getWrestlingGyms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Showing all wrestling gyms from the database!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <p class="message text-center"></p>
 
       <div class="gyms-list ml-5 mr-5 row-cols-1 row-cols-sm-2 row-cols-md-3 card-deck"></div>
+
     </body>
 </html>
