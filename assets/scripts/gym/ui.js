@@ -188,6 +188,7 @@ const showUpdateForm = function () {
   $('.gym-state').val($(this).data('state'))
   $('.gym-zip').val($(this).data('zip'))
   $('.gym-hours').val($(this).data('hours'))
+  $('.gym-link').val($(this).data('link'))
 
   $('#updateGymModal').modal('show')
   $('#update-gym').show()

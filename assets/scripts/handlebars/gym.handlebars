@@ -3,10 +3,11 @@
     <div class="card-body">
       <h3 class="card-title">{{gym.name}}</h3>
       <h4 class="card-subtitle mb-2 text-muted">{{gym.concentration}}</h4>
+      <h5 class="card-text"><a href="{{gym.link}}" target="_blank">Link to Website</a></h5>
       <h5 class="card-text">{{gym.address.street}} {{gym.address.city}} {{gym.address.state}} {{gym.address.zip}} <br>
       Hours: {{gym.hours}}
       </h5>
-      <button data-id="{{gym._id}}" data-name="{{gym.name}}" data-concentration="{{gym.concentration}}" data-street="{{gym.address.street}}" data-city="{{gym.address.city}}" data-state="{{gym.address.state}}" data-zip="{{gym.address.zip}}" data-hours="{{gym.hours}}" class="btn btn-sm btn-primary update-gym">Update</button>
+      <button data-id="{{gym._id}}" data-name="{{gym.name}}" data-concentration="{{gym.concentration}}" data-street="{{gym.address.street}}" data-city="{{gym.address.city}}" data-state="{{gym.address.state}}" data-zip="{{gym.address.zip}}" data-hours="{{gym.hours}}" data-link="{{gym.link}}" class="btn btn-sm btn-primary update-gym">Update</button>
       <button data-id="{{gym._id}}" class="btn btn-sm btn-outline-danger delete-gym">Delete</button>
     </div>
   </div>

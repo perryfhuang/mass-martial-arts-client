@@ -160,7 +160,9 @@
                       <option value="Tae Kwon Do">Tae Kwon Do</option>
                       <option value="Wrestling">Wrestling</option>
                     </select> <br>
-                    <label for="gym[address][street]" required>Address</label>
+                    <label for="gym[link]">Link to Website</label>
+                    <input name="gym[link]" type="text" required> <br>
+                    <label for="gym[address][street]">Address</label>
                     <input name="gym[address][street]" type="text" required> <br>
                     <label for="gym[address][city]">City</label>
                     <input name="gym[address][city]" type="text" required> <br>
@@ -209,6 +211,8 @@
                       <option value="Tae Kwon Do">Tae Kwon Do</option>
                       <option value="Wrestling">Wrestling</option>
                     </select> <br>
+                    <label for="gym[link]">Link to Website</label>
+                    <input class="gym-link" name="gym[link]" type="text" required> <br>
                     <label for="gym[address][street]">Address</label>
                     <input class="gym-street" name="gym[address][street]" type="text" required> <br>
                     <label for="gym[address][city]">City</label>
@@ -261,7 +265,7 @@
       <!-- Jumbotron -->
       <div class="jumbotron text-center mb-0 pt-5 pb-4">
         <img src="./public/mass-martial-arts-header.png" width="703" height="104"/>
-        <p>A library of the top martial arts gyms in the Greater Boston Area</p>
+        <p>A crowdsourced library of martial arts gyms in the Greater Boston Area</p>
 
         <!-- <p>Browse and search top gyms by training concentration. Are you a gym owner or employee? Or do you train at a gym and don't see your gym represented? Create an account to register your gym in the database!</p> -->
       </div>
