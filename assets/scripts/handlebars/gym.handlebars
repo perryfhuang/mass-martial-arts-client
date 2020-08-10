@@ -4,7 +4,7 @@
       <h3 class="card-title">{{gym.name}}</h3>
       <h4 class="card-subtitle mb-2 text-muted">{{gym.concentration}}</h4>
       <h5 class="card-text"><a href="{{gym.link}}" target="_blank">Link to Website</a></h5>
-      <h5 class="card-text">{{gym.address.street}} {{gym.address.city}} {{gym.address.state}} {{gym.address.zip}} <br><br>
+      <h5 class="card-text">{{gym.address.street}}<br>{{gym.address.city}}, {{gym.address.state}} {{gym.address.zip}} <br><br>
       <span class="hours">Hours:</span><br><span class="linebreak">{{gym.hours}}</span>
       </h5>
       {{#if (ifowner gym.owner)}}
