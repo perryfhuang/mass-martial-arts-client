@@ -1,7 +1,6 @@
 # Mass Martial Arts
 
-This application allows the user to do x, y, and z. Maybe here's a reason why I
-wanted to do this project, or came up with this idea.
+Mass Martial Arts is a library of martial arts gym in the Greater Boston Area. I came up with this idea awhile back, maybe even beginning at the end of 2019, before I began SEI. This idea came to me as I was thinking about projects I could develop as I started my software engineering journey. I was also browsing out specific martial arts gyms at the time; I was looking for gyms training in certain concentrations, such as jiu jitsu, boxing and MMA. I wanted a one-stop place where I could filter gyms by martial arts training type, instead of having to Google 'jiu jitsu gyms boston' or 'boxing gyms near me'. The idea is similar to yelp, except for martial arts gyms in Boston! During initial planning, I wanted there to be user reviews for each gym, with a 5 star rating system and an average rating for each gym. I quickly gave myself a reality check and realized I would not have time to develop all the features I envisioned for this project, and h
 
 ## Important Links
 
