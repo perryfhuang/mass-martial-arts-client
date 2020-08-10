@@ -166,7 +166,7 @@ const deleteGymSuccess = function () {
   // After successful delete, trigger a get-all-gyms event to refresh list
   api.showGyms()
     .then(showGymsSuccess)
-    .then(() => $('#showGymsSuccess').modal('hide'))
+    .then(() => $('#showGymsSuccess').hide())
     .then(() => $('#deleteGymSuccess').modal('show'))
     .then(() => $('.message').text('Deleted gym from database and refreshed list!'))
     .catch(showGymsFail)
@@ -201,11 +201,18 @@ const updateGymSuccess = function () {
   // After successful update, trigger get all gyms api call to refresh list
   api.showGyms()
     .then(showGymsSuccess)
-    .then(() => $('#getGymsSuccess').modal('hide'))
+    .then(() => {
+      $('#getGymsSuccess').hide()
+      console.log('This should hide the modal')
+    })
     .then(() => $('#updateGymModal').modal('hide'))
     .then(() => $('#update-gym').hide())
     .then(() => $('.message').text('Updated gym info and refreshed list!'))
-    .then(() => $('#updateGymSuccess').modal('show'))
+    .then(() => {
+      $('#updateGymSuccess').modal('show')
+      console.log('Sucessfully updated')
+    })
+
     .catch(showGymsFail)
 }
 const updateGymFail = function () {
