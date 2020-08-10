@@ -14,7 +14,6 @@ const getGymsModalHandlebarsTemplate = require('../handlebars/get-gyms-modal.han
 const api = require('./api')
 
 const createGymSuccess = function (response) {
-  console.log(response)
   $('.message').text('Your gym was added to the database!')
   $('form').trigger('reset')
   const gymHtml = gymHandlebarsTemplate({ gym: response.gym })
@@ -31,7 +30,6 @@ const createGymFail = function () {
 }
 
 const showGymsSuccess = function (response) {
-  console.log(response)
   const getGymsModal = getGymsModalHandlebarsTemplate()
   $('body').append(getGymsModal)
   $('#getGymsSuccess').modal('show')
@@ -58,8 +56,6 @@ const showMMAGymsFail = function (error) {
 }
 
 const showBoxingGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
-  console.log(response.gyms)
   const gymsHtml = gymsBoxingHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all boxing gyms from database')
@@ -72,7 +68,6 @@ const showBoxingGymsFail = function (error) {
 }
 
 const showBJJGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsBJJHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all BJJ gyms from database')
@@ -85,7 +80,6 @@ const showBJJGymsFail = function (error) {
 }
 
 const showJudoGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsJudoHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all judo gyms from database')
@@ -98,7 +92,6 @@ const showJudoGymsFail = function (error) {
 }
 
 const showKarateGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsKarateHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all karate gyms from database')
@@ -111,7 +104,6 @@ const showKarateGymsFail = function (error) {
 }
 
 const showKickboxingGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsKickboxingHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all kickboxing gyms from database')
@@ -124,7 +116,6 @@ const showKickboxingGymsFail = function (error) {
 }
 
 const showMuayThaiGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsMuayThaiHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all Muay Thai gyms from database')
@@ -137,7 +128,6 @@ const showMuayThaiGymsFail = function (error) {
 }
 
 const showTKDGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsTKDHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all Tae Kwon Do gyms from database')
@@ -150,7 +140,6 @@ const showTKDGymsFail = function (error) {
 }
 
 const showWrestlingGymsSuccess = function (response) {
-  // $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsWrestlingHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all wrestling gyms from database')

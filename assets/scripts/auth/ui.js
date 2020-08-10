@@ -24,7 +24,6 @@ const loginSuccess = function (response) {
   $('.filters').show()
   $('.signup').hide()
   store.user = response.user
-  console.log(store)
 }
 const loginFail = function () {
   $('.message').text('Login failed. =(\nPlease check credentials.')
@@ -53,8 +52,6 @@ const logoutSuccess = function () {
   $('#logout, .changepw, .create-gym, .fas, .user-button').hide()
   $('.login, .signup').show()
   $('#logoutSuccess').modal('show')
-  // $('#main-menu').fadeIn(500)
-  // $('#logout, #new-game, #stats, #show-changepw, #change-pw').hide()
 }
 const logoutFail = function () {
   $('.message').text('Failed to logout. =(')
@@ -79,13 +76,16 @@ const signUpAfterFail = function () {
 const changepwAfterFail = function () {
   $('#changepwFail').modal('hide')
   $('#changepwModal').modal('show')
+  $('form').trigger('reset')
 }
 
 const signUp = function () {
+  $('form').trigger('reset')
   $('#loginModal').modal('hide')
   $('#signUpModal').modal('show')
 }
 const login = function () {
+  $('form').trigger('reset')
   $('#loginModal').modal('show')
   $('#signUpModal, #loginFail').modal('hide')
 }
