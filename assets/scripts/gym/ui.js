@@ -60,6 +60,7 @@ const showMMAGymsFail = function (error) {
 
 const showBoxingGymsSuccess = function (response) {
   // $('#showGymsSuccess').modal('show')
+  console.log(response.gyms)
   const gymsHtml = gymsBoxingHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all boxing gyms from database')
