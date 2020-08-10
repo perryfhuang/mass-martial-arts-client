@@ -34,7 +34,7 @@ const showGymsSuccess = function (response) {
   console.log(response)
   const getGymsModal = getGymsModalHandlebarsTemplate()
   $('body').append(getGymsModal)
-  $('#showGymsSuccess').modal('show')
+  $('#getGymsSuccess').modal('show')
   const gymsHtml = gymsHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all gyms from database')
@@ -201,7 +201,7 @@ const updateGymSuccess = function () {
   // After successful update, trigger get all gyms api call to refresh list
   api.showGyms()
     .then(showGymsSuccess)
-    .then(() => $('#showGymsSuccess').modal('hide'))
+    .then(() => $('#getGymsSuccess').modal('hide'))
     .then(() => $('#updateGymModal').modal('hide'))
     .then(() => $('#update-gym').hide())
     .then(() => $('.message').text('Updated gym info and refreshed list!'))
