@@ -32,10 +32,9 @@ const createGymFail = function () {
 
 const showGymsSuccess = function (response) {
   console.log(response)
-  // $('#showGymsSuccess').modal('show')
   const getGymsModal = getGymsModalHandlebarsTemplate()
   $('body').append(getGymsModal)
-  $('#getGymsSuccess').modal('show')
+  $('#showGymsSuccess').modal('show')
   const gymsHtml = gymsHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('.message').text('Retrieved all gyms from database')
@@ -167,10 +166,13 @@ const deleteGymSuccess = function () {
   // After successful delete, trigger a get-all-gyms event to refresh list
   api.showGyms()
     .then(showGymsSuccess)
+    .then(() => $('#showGymsSuccess').modal('hide'))
+    .then(() => $('#deleteGymSuccess').modal('show'))
     .then(() => $('.message').text('Deleted gym from database and refreshed list!'))
     .catch(showGymsFail)
 }
 const deleteGymFail = function () {
+  $('deleteGymFail').modal('show')
   $('.message').text('Failed to delete gym from database!')
 }
 

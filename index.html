@@ -69,8 +69,8 @@
                 <div class="text-center">
                   <!-- Sign up form -->
                   <form id="sign-up">
-                    <input name="credentials[email]" type="email" placeholder="Email" class="mb-2" required/> <br>
-                    <input name="credentials[password]" type="password" placeholder="Password" class="mb-2" required/> <br>
+                    <input name="credentials[email]" type="email" placeholder="Email"  required/> <br>
+                    <input name="credentials[password]" type="password" placeholder="Password"  required/> <br>
                     <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="mb-3" required/> <br>
                     <button type="submit" class="btn btn-primary">Sign Up</button>
                   </form>
@@ -116,11 +116,13 @@
                 </div>
                 <div class="modal-body text-center">
                   <h2 class="modal-title" id="exampleModalLabel">Create Gym Profile</h2>
+                </div>
                   <!-- Create gym form -->
-                  <form id="create-gym" class="mt-4">
-                    <label for="gym[name]">Gym Name</label>
+                  <div class="form">
+                  <form id="create-gym">
+                    <label class="mb-0" for="gym[name]">Gym Name</label><br>
                     <input name="gym[name]" type="text" required> <br>
-                    <label for="gym[concentration]">Training Type</label>
+                    <label class="mb-0 mt-2" for="gym[concentration]">Training Type</label><br>
                     <select name=gym[concentration] required>
                       <option value=""></option>
                       <option value="Boxing">Boxing</option>
@@ -133,27 +135,28 @@
                       <option value="Tae Kwon Do">Tae Kwon Do</option>
                       <option value="Wrestling">Wrestling</option>
                     </select> <br>
-                    <label for="gym[link]">Link to Website</label>
+                    <label class="mb-0 mt-2" for="gym[link]">Link to Website</label><br>
                     <input name="gym[link]" type="url" required> <br>
-                    <label for="gym[address][street]">Address</label>
+                    <label class="mb-0 mt-2" for="gym[address][street]">Address</label><br>
                     <input name="gym[address][street]" type="text" required> <br>
-                    <label for="gym[address][city]">City</label>
+                    <label class="mb-0 mt-2" for="gym[address][city]">City</label><br>
                     <input name="gym[address][city]" type="text" required> <br>
-                    <label for="gym[address][state]">State</label>
+                    <label class="mb-0 mt-2" for="gym[address][state]">State</label>
                     <select name=gym[address][state]>
                       <option value="MA">MA</option>
                     </select> <br>
-                    <label for="gym[address][zip]">ZIP</label>
+                    <label class="mb-0 mt-2" for="gym[address][zip]">ZIP</label><br>
                     <input name="gym[address][zip]" type="number" required> <br>
-                    <label for="gym[hours]">Hours</label>
-                    <input name="gym[hours]" type="text" required> <br>
+                    <label class="mb-0 mt-2" for="gym[hours]">Hours</label><br>
+                    <textarea name="gym[hours]" rows="5" required></textarea> <br>
                     <button type="submit" class="btn btn-primary mt-4 mb-4">Submit</button>
                   </form>
+                </div>
                   <!-- End create gym form -->
                 </div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
           <!-- End Create Gym Profile modal -->
 
           <!--  Update Gym Profile Modal -->
@@ -167,11 +170,13 @@
                 </div>
                 <div class="modal-body text-center">
                   <h2 class="modal-title" id="exampleModalLabel">Update Gym Profile</h2>
+                </div>
                   <!-- Update gym form -->
-                  <form id="update-gym" class="mt-4">
-                    <label for="gym[name]">Gym Name</label>
-                    <input class="gym-name" name="gym[name]" type="text" required> <br>
-                    <label for="gym[concentration]">Training Type</label>
+                  <div class="form">
+                  <form id="update-gym">
+                    <label class="mb-0" for="gym[name]">Gym Name</label><br>
+                    <input class="gym-name" name="gym[name]" type="text" required><br>
+                    <label class="mb-0 mt-2" for="gym[concentration]">Training Type</label><br>
                     <select class="gym-concentration" name=gym[concentration] required>
                       <option value=""></option>
                       <option value="Boxing">Boxing</option>
@@ -184,27 +189,29 @@
                       <option value="Tae Kwon Do">Tae Kwon Do</option>
                       <option value="Wrestling">Wrestling</option>
                     </select> <br>
-                    <label for="gym[link]">Link to Website</label>
-                    <input class="gym-link" name="gym[link]" type="url" required> <br>
-                    <label for="gym[address][street]">Address</label>
-                    <input class="gym-street" name="gym[address][street]" type="text" required> <br>
-                    <label for="gym[address][city]">City</label>
+                    <label class="mb-0 mt-2" for="gym[link]">Link to Website</label><br>
+                    <input class="gym-link" name="gym[link]" type="url" required><br>
+                    <label class="mb-0 mt-2" for="gym[address][street]">Address</label><br>
+                    <input class="gym-street" name="gym[address][street]" type="text" required><br>
+                    <label class="mb-0 mt-2" for="gym[address][city]">City</label><br>
                     <input class="gym-city" name="gym[address][city]" type="text" required> <br>
-                    <label for="gym[address][state]">State</label>
+                    <label class="mb-0 mt-2" for="gym[address][state]">State</label><br>
                     <select class="gym-state" name=gym[address][state]>
                       <option value="MA">MA</option>
                     </select> <br>
-                    <label for="gym[address][zip]">ZIP</label>
+                    <label class="mb-0 mt-2" for="gym[address][zip]">ZIP</label><br>
                     <input class="gym-zip" name="gym[address][zip]" type="number" required> <br>
-                    <label for="gym[hours]">Hours</label>
-                    <input class="gym-hours" name="gym[hours]" type="text" required> <br>
+                    <label class="mb-0 mt-2" for="gym[hours]">Hours</label><br>
+                    <textarea class="gym-hours" name="gym[hours]" rows="5" required></textarea> <br>
                     <button type="submit" class="btn btn-primary update-gym-submit mt-4 mb-4">Submit</button>
                   </form>
+                </div>
                   <!-- End Update Gym Form -->
+
                 </div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
           <!-- End Create Gym Profile modal -->
 
           <!--  Change PW Modal -->
@@ -325,13 +332,10 @@
       <div class="modal fade" id="showGymsSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-dialog text-center">
+            <div class="modal-header text-center d-block">
               <p class="modal-title" id="exampleModalLabel">Showing all registered gyms in the Greater Boston Area!</p>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
                 Close
               </button>
@@ -436,6 +440,41 @@
             <div class="modal-body">
               <button type="button" class="btn btn-primary update-gym-after-fail" data-toggle="modal" data-dismiss="modal">
                 Update Gym
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Successful Delete Gym Modal -->
+      <div class="modal fade" id="deleteGymSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center d-block">
+              <p class="modal-title" id="exampleModalLabel">Deleted gym from database and refreshed list!</p>
+            </div>
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fail Delete Gym Modal -->
+      <div class="modal fade" id="deleteGymFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-dialog text-center">
+              <h2 class="modal-title" id="exampleModalLabel">Failed to delete gym.<br> Please try again.</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary update-gym-after-fail" data-toggle="modal" data-dismiss="modal">
+                Close
               </button>
             </div>
           </div>
