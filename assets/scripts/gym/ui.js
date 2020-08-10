@@ -165,8 +165,6 @@ const showWrestlingGymsFail = function (error) {
 const deleteGymSuccess = function () {
   // After successful delete, trigger a get-all-gyms event to refresh list
   api.showGyms()
-    .then(showGymsSuccess)
-    .then(() => $('#showGymsSuccess').hide())
     .then(() => $('#deleteGymSuccess').modal('show'))
     .then(() => $('.message').text('Deleted gym from database and refreshed list!'))
     .catch(showGymsFail)
@@ -199,20 +197,13 @@ const showUpdateForm = function () {
 
 const updateGymSuccess = function () {
   // After successful update, trigger get all gyms api call to refresh list
+  // UPDATED -> refresh button calls GET all gyms api call
+  // kind of clunky, but workaround for a modal bug that came up
   api.showGyms()
-    .then(showGymsSuccess)
-    .then(() => {
-      $('#getGymsSuccess').hide()
-      console.log('This should hide the modal')
-    })
     .then(() => $('#updateGymModal').modal('hide'))
     .then(() => $('#update-gym').hide())
     .then(() => $('.message').text('Updated gym info and refreshed list!'))
-    .then(() => {
-      $('#updateGymSuccess').modal('show')
-      console.log('Sucessfully updated')
-    })
-
+    .then(() => $('#updateGymSuccess').modal('show'))
     .catch(showGymsFail)
 }
 const updateGymFail = function () {

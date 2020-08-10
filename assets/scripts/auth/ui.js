@@ -21,7 +21,8 @@ const loginSuccess = function (response) {
   $('.changepw, #logout, .create-gym, .fas, .user-button').show()
   $('#loginSuccess').modal('show')
   $('#loginModal').modal('hide')
-
+  $('.filters').show()
+  $('.signup').hide()
   store.user = response.user
   console.log(store)
 }
