@@ -27,7 +27,7 @@ As I have mentioned, a lot of my vision for this app were again, stretch goals. 
 ### Technologies Used
 
 - HTML5
-- CSS/SAss
+- CSS/Sass
 - Bootstrap
 - Javascript
 - jQuery
