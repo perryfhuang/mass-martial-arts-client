@@ -22,7 +22,7 @@ I came up with this idea awhile back, maybe even beginning at the end of 2019, b
 4. As a gym owner/employee, I want to be able to CREATE a gym profile of my gym, and UPDATE that gym profile, which includes the details listed in user story 2.
 5. As a user, I want to be able to learn more about each type of martial art (maybe I have no idea what Brazilian jiu jitsu is and I want to find out more - maybe a quick about page for each concentration - and also what gym can I check out to get started?).
 
-As I have mentioned, a lot of my vision for this app were again, stretch goals. I devicded to have the V1 not include pictures, videos, or a review system. However, these are definitely the first things on my list to work on for future iterations of the app.
+As I have mentioned, a lot of my vision for this app were again, stretch goals. I decided to have the V1 not include pictures, videos, or a review system. However, these are definitely the first things on my list to work on for future iterations of the app.
 
 ### Technologies Used
 
