@@ -8,9 +8,39 @@
   width: 65%;
 }
 
-.summary {
-  font-size: 1.25vw;
+/* If the screen size is 601px wide or more, set the font-size of .summary to 16px */
+@media screen and (min-width: 1000px) {
+  .summary {
+    font-size: 16px;
+  }
 }
+
+@media screen and (min-width: 800px) and (max-width: 999px) {
+  .summary {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px){
+  .summary {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 599px) {
+  .summary {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .summary {
+    font-size: 6px;
+  }
+}
+
+// .summary {
+//   font-size: calc(4px + 0.75vw);
+// }
 
 .filters {
   display: none;
