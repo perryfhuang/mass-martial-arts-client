@@ -77,8 +77,6 @@ const onUpdateGym = function (event) {
   const formData = getFormFields(form)
   const gymId = $('.update-gym-submit').data('id')
   formData._id = gymId
-  console.log(formData)
-  console.log(gymId)
   api.updateGym(formData, gymId)
     .then(ui.updateGymSuccess)
     .catch(ui.updateGymFail)

@@ -167,7 +167,6 @@ const showUpdateForm = function () {
   // Attach GYM data-id somehow to this form - use .data jquery method
   // Set update-gym-submit button's data-id attribute to the data-id attribute of the specific gym
   $('.update-gym-submit').data('id', $(this).data('id'))
-  console.log($('.update-gym-submit').data('id'))
 
   // Auto populate current gym info into the form
   // This was done by setting data attributes for all gym info on the update button for each gym using handlebars template (data-name, data-street, data-hours, etc.), and then setting the form field using jquery (by getting the data-value from the button)
@@ -184,7 +183,7 @@ const showUpdateForm = function () {
   $('#update-gym').show()
 }
 
-const updateGymSuccess = function () {
+const updateGymSuccess = function (response) {
   // After successful update, trigger get all gyms api call to refresh list
   // UPDATED -> refresh button calls GET all gyms api call
   // kind of clunky, but workaround for a modal bug that came up
