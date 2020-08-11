@@ -4,6 +4,14 @@
   display: none;
 }
 
+.header {
+  width: 80%;
+}
+
+.summary {
+  font-size: 1.5vw;
+}
+
 .filters {
   display: none;
 }
@@ -64,20 +72,3 @@ body {
 .linebreak {
   white-space: pre-wrap;
 }
-// .modal-backdrop {
-//    background-color: black;
-// }
-// .overlay {
-//   display: none;
-//   position: fixed; /* Positioning and size */
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   background-color: black; /* color */
-// }
-
-// .gyms-list {
-//   margin-left: 20rem;
-//   margin-right: 20rem;
-// }
