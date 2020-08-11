@@ -6,7 +6,7 @@ This app is useful for anyone who, like myself, is actively looking for certain 
 
 ## Important Links
 
-- [Deployed App](https://perryfhuang.github.io/mass-martial-arts-client/)
+- [Mass Martial Arts App](https://perryfhuang.github.io/mass-martial-arts-client/)
 - [API GitHub Repo](https://github.com/perryfhuang/mass-martial-arts-api)
 
 
