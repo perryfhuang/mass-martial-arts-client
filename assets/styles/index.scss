@@ -13,10 +13,16 @@
   .summary {
     font-size: 16px;
   }
+  .btn-responsive {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 800px) and (max-width: 999px) {
   .summary {
+    font-size: 14px;
+  }
+  .btn-responsive {
     font-size: 14px;
   }
 }
@@ -25,16 +31,25 @@
   .summary {
     font-size: 10px;
   }
+  .btn-responsive {
+    font-size: 14px;
+  }
 }
 @media screen and (min-width: 400px) and (max-width: 599px) {
   .summary {
     font-size: 8px;
+  }
+  .btn-responsive {
+    font-size: 11px;
   }
 }
 
 @media screen and (max-width: 399px) {
   .summary {
     font-size: 6px;
+  }
+  .btn-responsive {
+    font-size: 10px;
   }
 }
 
