@@ -8,7 +8,7 @@ This app is useful for anyone who, like myself, is actively looking for certain 
 
 - [Mass Martial Arts App](https://perryfhuang.github.io/mass-martial-arts-client/)
 - [API GitHub Repo](https://github.com/perryfhuang/mass-martial-arts-api)
-
+- [Deployed API](https://whispering-brook-82557.herokuapp.com)
 
 ## Planning Story
 
