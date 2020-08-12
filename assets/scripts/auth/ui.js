@@ -46,12 +46,12 @@ const changepwFail = function () {
 }
 
 const logoutSuccess = function () {
-  $('.message').text('Succesfully logged out.\nCya later!')
   $('form').trigger('reset')
   store.user = null
-  $('#logout, .changepw, .create-gym, .fas, .user-button').hide()
+  $('#logout, .changepw, .create-gym, .fas, .user-button, .filters').hide()
   $('.login, .signup').show()
   $('#logoutSuccess').modal('show')
+  $('.gyms-list').empty()
 }
 const logoutFail = function () {
   $('.message').text('Failed to logout. =(')
