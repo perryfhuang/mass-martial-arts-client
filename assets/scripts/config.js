@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://mass-martial-arts-api.herokuapp.com/',
+  production: 'https://mass-martial-arts-api.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
