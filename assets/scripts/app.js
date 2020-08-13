@@ -33,7 +33,8 @@ $(() => {
   $('#show-all, .refresh').on('click', gymEvents.onShowAll)
   $('#update-gym').on('submit', gymEvents.onUpdateGym)
   // Delete gym with event delegation (able to delete AFTER gyms list is added to HTML aka AFTER page load)
-  $('.gyms-list').on('click', '.delete-gym', gymEvents.onDeleteGym)
+  $('.gyms-list').on('click', '.delete-gym', uiEvents.deleteGymConfirmation)
+  $('.delete').on('click', gymEvents.onDeleteGym)
   // Show update gym form with same event delegation concept
   $('.gyms-list').on('click', '.update-gym', uiEvents.showUpdateForm)
 

@@ -125,8 +125,14 @@ const showWrestlingGymsSuccess = function (response) {
   $('form').trigger('reset')
   $('#getWrestlingGyms').modal('show')
 }
-const showWrestlingGymsFail = function (error) {
+const showWrestlingGymsFail = function () {
   $('form').trigger('reset')
+}
+
+const deleteGymConfirmation = function () {
+  $('#confirmDeleteGym').modal('show')
+  // Set data-id attribute on delete confirmation modal to data-id attribute of initial delete button (the gym's unique ID - to find and delete in database)
+  $('.delete').data('id', $(this).data('id'))
 }
 
 const deleteGymSuccess = function () {
@@ -213,5 +219,6 @@ module.exports = {
   showMuayThaiGymsSuccess,
   showMuayThaiGymsFail,
   showWrestlingGymsSuccess,
-  showWrestlingGymsFail
+  showWrestlingGymsFail,
+  deleteGymConfirmation
 }
