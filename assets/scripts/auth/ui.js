@@ -22,7 +22,7 @@ const loginSuccess = function (response) {
   $('#loginSuccess').modal('show')
   $('#loginModal').modal('hide')
   $('.filters').show()
-  $('.signup').hide()
+  $('.summary').html('A crowdsourced library of martial arts gyms in the Greater Boston Area.<br>Browse gyms by training concentration or add your own gym to the database.')
   $('.gyms-list').empty()
   store.user = response.user
 }
