@@ -16,10 +16,7 @@ const createGym = function (formData) {
 const showGyms = function () {
   return $.ajax({
     url: config.apiUrl + '/gyms',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+    method: 'GET'
   })
 }
 

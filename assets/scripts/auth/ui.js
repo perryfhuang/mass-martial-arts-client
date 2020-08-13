@@ -23,6 +23,7 @@ const loginSuccess = function (response) {
   $('#loginModal').modal('hide')
   $('.filters').show()
   $('.signup').hide()
+  $('.gyms-list').empty()
   store.user = response.user
 }
 const loginFail = function () {
@@ -47,13 +48,15 @@ const changepwFail = function () {
 
 const logoutSuccess = function () {
   $('form').trigger('reset')
-  store.user = null
-  $('#logout, .changepw, .create-gym, .fas, .user-button, .filters').hide()
+  store.user = {}
+  store.user._id = ''
+  $('#logout, .changepw, .create-gym, .fas, .user-button').hide()
   $('.login, .signup').show()
   $('#logoutSuccess').modal('show')
   $('.gyms-list').empty()
 }
 const logoutFail = function () {
+  console.log('Failed to log out')
   $('.message').text('Failed to logout. =(')
   $('form').trigger('reset')
 }
