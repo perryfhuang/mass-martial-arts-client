@@ -18,6 +18,8 @@ $(() => {
 
   // Redirect modal links
   $('.signUp').on('click', uiAuthEvents.signUp)
+  // Sign up modal with event delegation
+  $('.summary').on('click', '.signUp', uiAuthEvents.signUp)
   $('.login').on('click', uiAuthEvents.login)
 
   // Login button listener for immediately AFTER user has signed up

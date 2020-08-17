@@ -53,16 +53,12 @@
   }
 }
 
-// .summary {
-//   font-size: calc(4px + 0.75vw);
-// }
+#show-my-gyms {
+  display: none;
+}
 
 body {
   background-color: black;
-}
-
-.message {
-  color: white;
 }
 
 #logout {

@@ -18,7 +18,7 @@ const loginSuccess = function (response) {
   $('.message').text('Succesfully logged in.')
   $('form').trigger('reset')
   $('.login, .signup').hide()
-  $('.changepw, #logout, .create-gym, .fas, .user-button').show()
+  $('.changepw, #logout, .create-gym, .fas, .user-button, #show-my-gyms').show()
   $('#loginSuccess').modal('show')
   $('#loginModal').modal('hide')
   $('.filters').show()
@@ -50,10 +50,11 @@ const logoutSuccess = function () {
   $('form').trigger('reset')
   store.user = {}
   store.user._id = ''
-  $('#logout, .changepw, .create-gym, .fas, .user-button').hide()
+  $('#logout, .changepw, .create-gym, .fas, .user-button, #show-my-gyms').hide()
   $('.login, .signup').show()
   $('#logoutSuccess').modal('show')
   $('.gyms-list').empty()
+  $('.summary').html('A crowdsourced library of martial arts gyms in the Greater Boston Area.<br>Browse gyms by training concentration or <span class="signup"><a href="#" class="signUp">sign up</a> to add your own gym to the database.</span>')
 }
 const logoutFail = function () {
   console.log('Failed to log out')
