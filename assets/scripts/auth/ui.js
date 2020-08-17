@@ -2,45 +2,39 @@
 const store = require('../store')
 
 const signUpSuccess = function () {
-  $('.message').text('Account created!')
   $('#signUpSuccess').modal('show')
   $('#signUpModal').modal('hide')
 
   $('form').trigger('reset')
 }
 const signUpFail = function () {
-  $('.message').text('Account is taken, please try again.')
   $('#signUpFail').modal('show')
   $('#signUpModal').modal('hide')
 }
 
 const loginSuccess = function (response) {
-  $('.message').text('Succesfully logged in.')
   $('form').trigger('reset')
   $('.login, .signup').hide()
   $('.changepw, #logout, .create-gym, .fas, .user-button, #show-my-gyms').show()
   $('#loginSuccess').modal('show')
   $('#loginModal').modal('hide')
-  $('.filters').show()
   $('.summary').html('A crowdsourced library of martial arts gyms in the Greater Boston Area.<br>Browse gyms by training concentration or add your own gym to the database.')
   $('.gyms-list').empty()
+  $('#collapseExample').collapse('hide')
   store.user = response.user
 }
 const loginFail = function () {
-  $('.message').text('Login failed. =(\nPlease check credentials.')
   $('form').trigger('reset')
   $('#loginModal').modal('hide')
   $('#loginFail').modal('show')
 }
 
 const changepwSuccess = function () {
-  $('.message').text('Password changed!')
   $('#changepwModal').modal('hide')
   $('#changepwSuccess').modal('show')
   $('form').trigger('reset')
 }
 const changepwFail = function () {
-  $('.message').text('Failed to change password.')
   $('#changepwModal').modal('hide')
   $('#changepwFail').modal('show')
   $('form').trigger('reset')
@@ -57,8 +51,6 @@ const logoutSuccess = function () {
   $('.summary').html('A crowdsourced library of martial arts gyms in the Greater Boston Area.<br>Browse gyms by training concentration or <span class="signup"><a href="#" class="signUp">sign up</a> to add your own gym to the database.</span>')
 }
 const logoutFail = function () {
-  console.log('Failed to log out')
-  $('.message').text('Failed to logout. =(')
   $('form').trigger('reset')
 }
 
