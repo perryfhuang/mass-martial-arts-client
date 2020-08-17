@@ -11,6 +11,7 @@ const gymsMuayThaiHandlebarsTemplate = require('../handlebars/gyms-muay-thai.han
 const gymsTKDHandlebarsTemplate = require('../handlebars/gyms-tkd.handlebars')
 const gymsWrestlingHandlebarsTemplate = require('../handlebars/gyms-wrestling.handlebars')
 const getGymsModalHandlebarsTemplate = require('../handlebars/get-gyms-modal.handlebars')
+const noGymsModalHandlebarsTemplate = require('../handlebars/nogyms.handlebars')
 const api = require('./api')
 
 const createGymSuccess = function (response) {
@@ -53,7 +54,15 @@ const showBoxingGymsSuccess = function (response) {
   const gymsHtml = gymsBoxingHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getBoxingGyms').modal('show')
+
+  if ($('.gyms-list').html()) {
+    $('#getBoxingGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'boxing' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showBoxingGymsFail = function () {
   $('form').trigger('reset')
@@ -63,7 +72,15 @@ const showBJJGymsSuccess = function (response) {
   const gymsHtml = gymsBJJHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getBJJSuccess').modal('show')
+
+  if ($('.gyms-list').html()) {
+    $('#getBJJGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'Brazilian jiu jitsu' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showBJJGymsFail = function () {
   $('form').trigger('reset')
@@ -73,7 +90,15 @@ const showJudoGymsSuccess = function (response) {
   const gymsHtml = gymsJudoHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getJudoGyms').modal('show')
+
+  if ($('.gyms-list').html()) {
+    $('#getJudoGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'judo' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showJudoGymsFail = function () {
   $('form').trigger('reset')
@@ -83,7 +108,15 @@ const showKarateGymsSuccess = function (response) {
   const gymsHtml = gymsKarateHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getKarateGyms').modal('show')
+
+  if ($('.gyms-list').html()) {
+    $('#getKarateGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'karate' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showKarateGymsFail = function () {
   $('form').trigger('reset')
@@ -93,7 +126,15 @@ const showKickboxingGymsSuccess = function (response) {
   const gymsHtml = gymsKickboxingHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getKickboxingGyms').modal('show')
+
+  if ($('.gyms-list').html()) {
+    $('#getKickboxingGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'kickboxing' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showKickboxingGymsFail = function () {
   $('form').trigger('reset')
@@ -103,7 +144,15 @@ const showMuayThaiGymsSuccess = function (response) {
   const gymsHtml = gymsMuayThaiHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getMuayThaiGyms').modal('show')
+
+  if ($('.gyms-list').html()) {
+    $('#getMuayThaiGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'Muay Thai' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showMuayThaiGymsFail = function () {
   $('form').trigger('reset')
@@ -113,7 +162,15 @@ const showTKDGymsSuccess = function (response) {
   const gymsHtml = gymsTKDHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getTKDGyms').modal('show')
+
+  if ($('.gyms-list').html()) {
+    $('#getTKDGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'Tae Kwon Do' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showTKDGymsFail = function () {
   $('form').trigger('reset')
@@ -123,7 +180,14 @@ const showWrestlingGymsSuccess = function (response) {
   const gymsHtml = gymsWrestlingHandlebarsTemplate({ gyms: response.gyms })
   $('.gyms-list').html(gymsHtml)
   $('form').trigger('reset')
-  $('#getWrestlingGyms').modal('show')
+  if ($('.gyms-list').html()) {
+    $('#getWrestlingGyms').modal('show')
+  } else {
+    $('#noGyms').remove()
+    const noGymsHtml = noGymsModalHandlebarsTemplate({ concentration: 'wrestling' })
+    $('body').append(noGymsHtml)
+    $('#noGyms').modal('show')
+  }
 }
 const showWrestlingGymsFail = function () {
   $('form').trigger('reset')
