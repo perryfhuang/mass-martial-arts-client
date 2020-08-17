@@ -33,6 +33,7 @@ $(() => {
   // Gym resource event listeners
   $('#create-gym').on('submit', gymEvents.onCreateGym)
   $('#show-all, .refresh').on('click', gymEvents.onShowAll)
+  $('#show-my-gyms').on('click', gymEvents.onShowMyGyms)
   $('#update-gym').on('submit', gymEvents.onUpdateGym)
   // Delete gym with event delegation (able to delete AFTER gyms list is added to HTML aka AFTER page load)
   $('.gyms-list').on('click', '.delete-gym', uiEvents.deleteGymConfirmation)

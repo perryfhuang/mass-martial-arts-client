@@ -18,6 +18,11 @@ const onShowAll = function (event) {
     .then(ui.showGymsSuccess)
     .catch(ui.showGymsFail)
 }
+const onShowMyGyms = function (event) {
+  api.showGyms()
+    .then(ui.showMyGymsSuccess)
+    .catch(ui.showMyGymsFail)
+}
 const onShowMMA = function (event) {
   api.showGyms()
     .then(ui.showMMAGymsSuccess)
@@ -95,5 +100,6 @@ module.exports = {
   onShowKickboxing,
   onShowMuayThai,
   onShowTKD,
-  onShowWrestling
+  onShowWrestling,
+  onShowMyGyms
 }

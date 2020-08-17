@@ -12,6 +12,7 @@ const gymsTKDHandlebarsTemplate = require('../handlebars/gyms-tkd.handlebars')
 const gymsWrestlingHandlebarsTemplate = require('../handlebars/gyms-wrestling.handlebars')
 const getGymsModalHandlebarsTemplate = require('../handlebars/get-gyms-modal.handlebars')
 const noGymsModalHandlebarsTemplate = require('../handlebars/nogyms.handlebars')
+const myGymsHandlebarsTemplate = require('../handlebars/my-gyms.handlebars')
 const api = require('./api')
 
 const createGymSuccess = function (response) {
@@ -37,6 +38,22 @@ const showGymsSuccess = function (response) {
   $('form').trigger('reset')
 }
 const showGymsFail = function () {
+  $('form').trigger('reset')
+}
+
+const showMyGymsSuccess = function (response) {
+
+  const gymsHtml = myGymsHandlebarsTemplate({ gyms: response.gyms })
+  $('.gyms-list').html(gymsHtml)
+  $('form').trigger('reset')
+
+  if ($('.gyms-list').html()) {
+    $('#getMyGymsSuccess').modal('show')
+  } else {
+    $('#noMyGyms').modal('show')
+  }
+}
+const showMyGymsFail = function () {
   $('form').trigger('reset')
 }
 
@@ -284,5 +301,7 @@ module.exports = {
   showMuayThaiGymsFail,
   showWrestlingGymsSuccess,
   showWrestlingGymsFail,
-  deleteGymConfirmation
+  deleteGymConfirmation,
+  showMyGymsSuccess,
+  showMyGymsFail
 }
