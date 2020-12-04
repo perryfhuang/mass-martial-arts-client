@@ -10,6 +10,18 @@ This app is useful for anyone who, like myself, is actively looking for certain 
 - [API GitHub Repo](https://github.com/perryfhuang/mass-martial-arts-api)
 - [Deployed API](https://mass-martial-arts-api.herokuapp.com/)
 
+## Screenshots
+
+Landing Page
+![Screenshot 1](https://i.imgur.com/VvueyJX.png)
+
+Login Modal
+![Screenshot 2](https://i.imgur.com/rQ7oJWj.png)
+
+Filter Modal
+![Screenshot 3](https://i.imgur.com/YujBhhl.png)
+
+
 ## Planning Story
 
 I came up with this idea awhile back, maybe even beginning at the end of 2019, before I began SEI. This idea came to me as I was thinking about projects I could develop as I started my software engineering journey. I was also browsing out specific martial arts gyms at the time; I was looking for gyms training in certain concentrations, such as jiu jitsu, boxing and MMA. I wanted a one-stop place where I could filter gyms by martial arts training type, instead of having to Google 'jiu jitsu gyms boston' or 'boxing gyms near me'. The idea is similar to yelp, except for martial arts gyms in Boston! During initial planning, I wanted there to be user reviews for each gym, with a 5 star rating system and an average rating for each gym. I quickly gave myself a reality check and realized I would not have time to develop all the features I envisioned for this project, and instead just went for the MVP (minimum viable product), which is just being able to CRUD gyms, with each gym having a respective owner. This project served as a great learning opportunity for me to prioritize what features I want in an app and manage my time based on this. It helped me learn how to schedule out my time to conquer many small features that add up to big wins, whereas before I would just work on whatever I felt like until I was satisfied. I have learned that this strategy of planning and dividing features into small, conquerable pieces is much more effective for development.
